@@ -1,35 +1,33 @@
-<!-- To do
-Add semantic meaning instead of just using divs
-check using a html checker
-add lil icon
+<!--
+To Do
 
+About:
+- Actual professional photo
+- Maybe rewrite text
+- get text to wrate around image n good way
 
-Nav-bar:
-Make it so when the screen is shrucken it creates a button that can be used to exapand nav
-
-Splash:
-find a cool photo that relates to me, or get rid of this kinda stuff
-fit image to page, so theres no funky border
-Move stuff ontop of photo and position it
-Add scrolling effect
-
-About
-Literally everything
-
-Projects
-Literally everything
+Projects:
+- Switch to scrolling project bar instead of vertical to fit more projects
+- Add a small square image for each
+- Write Abouts for each
+- Make indepth page for each
 
 Contact
-center info
-format form submission
-setup form submission so I can actually recieve stuffs
+- Make font more readable
+- Make it so the main text box can't be resized off of the page
 
+Document
+- Add comments
+- Make generally more readable
+- Add faveicon
+- compress images to be more data efficient 
 -->
 
+
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 <head>
-    <!--Add a base URL and base the sub pages off of it-->
+  <!--Add a base URL and base the sub pages off of it-->
 
     <!-- Set font type and viewpoint-->
     <meta charset="UTF-8">
@@ -39,7 +37,7 @@ setup form submission so I can actually recieve stuffs
     <meta name="keywords" content="personal website">
 
     <!-- Description of website (when searched for on search engine)-->
-    <meta name="description" content="My personal website">
+    <meta name="description" content="Nat Krah personal website">
 
     <!--Author of code-->
     <meta name="--Author" content="Nat Krah">
@@ -48,80 +46,138 @@ setup form submission so I can actually recieve stuffs
     <title>Nat-Krah</title>
 
     <!--Add an cool icon-->
-    <link rel="icon" href="images/favicon-32x32.png" type="image/x.icon">
+    <!--link rel="icon" href="images/favicon-32x32.png" type="image/x.icon"-->
 
     <!--Linking the css and js file-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <script defer src="index.js"></script>
 </head>
 <body>
-    <nav class="header">
-        <!--Do stuffs for the top of the landing page-->
-        
-        <!--Add a button that can be used to show the nav bar-->
-        
-        <div id="navbarResponsive">
-            <ul id="navbar-nav">
-                <li><a class="nav-link" href="#about">About</a></li>
-                <li><a class="nav-link" href="#projects">Projects</a></li>
-                <li><a class="nav-link" href="#contact">Contact</a></li>
-                <li><a class="nav-link resumeHeader" href="assets/resume.pdf" target="_blank">Resume</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="intro">
-        <div class="introimage"><img src="images/360_F_461470323_6TMQSkCCs9XQoTtyer8VCsFypxwRiDGU.jpg" alt="" id="titlePhoto"></div>
-        <h1 class="header" id="mainHeader">Nat-Krah</h1>
-        <h2>Hi!</h2>
-        <p class="basicText">welcome to my website :3</p>
-
-    </div>
-
-    <hr>
-
-    <div> 
-        <h2 class="header" id="about">About</h2>
-        <img src="images/aboutMainPhoto.JPG" alt="selfie" id="selfie">
-        <p class="basicText">I'm Nat, a second year at RIT Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic cum ratione nobis harum quis doloribus ab quaerat amet a sint officiis nam explicabo ullam quia, officia nisi? Sit nesciunt ex eveniet, quidem alias aperiam repellendus dolorum dignissimos tenetur ipsum optio sed magnam aliquam provident atque laboriosam nulla explicabo? Quibusdam, id?</p>
-    </div>
-
-    <hr>
-
-    <div>
-        <h2 class="header" id="projects">Projects</h2>
-        <p class="basicText">For as long as I can remeber I've loved bringing my ideas to life, here are a couple:</p>
-    </div>
-
-    <hr>
-
-
-    <div>
-        <h2 class="header" id="contact">Contact</h2>
-        <p class="basicText">See something interesting? Or just wanna chat? </p>
-        <p class="basicText">I love meeting new people!</p>
-        
-        <ul id="contact-list">
-            <li class="contact-item"><a class="contact-icon" href="mailto:nicholaskrah1@gmail.com"><img class="contact-icon" src="images/mail.png" alt="email symbol"></a></li>
-            <li class="contact-item"><a class="contact-icon" href="https://github.com/nat-krah" target="_blank"><img class="contact-icon" src="images/github.png" alt="github symbol"></a></li>
-            <li class="contact-item"><a class="contact-icon" href="https://www.linkedin.com/in/nat-krah-15a19b359/" target="_blank"><img class="contact-icon" src="images/linkedin.png" alt="linkedin symbol"></a></li>        
+  <header>
+    <div class="container">
+      <h1>Nat Krah</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="/assets/resume.pdf" target="_blank">Resume</a></li>
         </ul>
-        
-        <form action="https://httpbin.org/post" method="post"> 
-            <p class="basicText"><label for="email">Email</label></p>
-            <input type="email" name="email" id="email" placeholder="email@domain.com" required autocomplete="on">
+      </nav>
+    </div>
+  </header>
 
-            <p class="basicText"><label for="message">Message</label></p>
-            <textarea name="message" id="message" cols="70" rows="5" placeholder="Let's chat!"></textarea>
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About</h2>
+      <div class="about-content">
+        <div class="about-image">
+          <img src="img/about-placeholder.png" alt="Nat Krah" />
+        </div>
+        <div class="about-text">
+          <p>
+            Hi! I'm Nat, a second year at RIT studing mechanical, aerospace, and computer engineering. For as long as I can remember I've loved putting things together.
+            From simple lego robotics in Elementery school to speocalizing in designing complex parts for a non-uniform robotic arm.         
+            My life has been a series of projects, and this website is an attempt to document it's highlights. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <button type="submit">Send</button>
-            <button type="reset">Clear</button>
-        </form>
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projects</h2>
 
+      <div class="project">
+        <div class="project-image">
+          <img src="images/project1-placeholder.jpg" alt="Project 1" />
+        </div>
+        <div class="project-text">
+          <h3><a href="project1.html">SPEX CubeSat</a></h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia sunt cumque rem blanditiis quibusdam in necessitatibus? Et nam aliquam quis impedit, corrupti odio error nostrum, dolor eligendi laudantium aperiam eos.
+          </p>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-image">
+          <img src="images/project2-placeholder.jpg" alt="Project 2" />
+        </div>
+        <div class="project-text">
+          <h3><a href="project2.html">All Seeing Eye</a></h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci molestiae illo impedit voluptates perferendis ipsum, tenetur officiis velit aut quae eveniet consequatur at expedita repellat autem obcaecati? Quae, quo. Nostrum.
+          </p>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-image">
+          <img src="images/project3-placeholder.jpg" alt="Project 3" />
+        </div>
+        <div class="project-text">
+          <h3><a href="project3.html">VEX Over Under Robot</a></h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptas optio atque provident facere illum dignissimos quidem, quod deleniti facilis est repellendus neque! Optio tempore animi quibusdam vitae magni expedita.
+          </p>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-image">
+          <img src="images/project4-placeholder.jpg" alt="Project 4" />
+        </div>
+        <div class="project-text">
+          <h3><a href="project3.html">Vertical Metal Organizers</a></h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptas optio atque provident facere illum dignissimos quidem, quod deleniti facilis est repellendus neque! Optio tempore animi quibusdam vitae magni expedita.
+          </p>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-image">
+          <img src="images/project5-placeholder.jpg" alt="Project 5" />
+        </div>
+        <div class="project-text">
+          <h3><a href="project3.html">Electric Car</a></h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptas optio atque provident facere illum dignissimos quidem, quod deleniti facilis est repellendus neque! Optio tempore animi quibusdam vitae magni expedita.
+          </p>
+        </div>
+      </div>
 
     </div>
+  </section>
 
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
 
-    
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div class="social-links">
+        <a href="https://github.com/nat-krah" target="_blank"><img src="img/github.png" alt="Github" class="contactIMG" width="50"></a>
+        <a href="https://www.linkedin.com/in/nat-krah/" target="_blank"><img src="img/linkedin.png" alt="LinkedIn" class="contactIMG" width="50"></a>
+        <a href="" target="_blank"><img src="img/mail.png" alt="Mail" class="contactIMG" width="50"></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+      <p>&copy; 2025 Nat Krah</p>
+  </footer>
 </body>
 </html>
