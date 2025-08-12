@@ -4,21 +4,22 @@ To Do
 About:
 - Actual professional photo
 - Maybe rewrite text
-- get text to wrate around image n good way
+- Change how text wraps around
 
 Projects:
-- Switch to scrolling project bar instead of vertical to fit more projects
 - Add a small square image for each
 - Write Abouts for each
 - Make indepth page for each
 
 Contact
+- Maybe remove Email section
 - Make font more readable
 - Make it so the main text box can't be resized off of the page
 
 Document
 - Add comments
 - Make generally more readable
+- reduce the number of useless divs
 - Add faveicon
 - compress images to be more data efficient 
 -->
@@ -27,8 +28,6 @@ Document
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!--Add a base URL and base the sub pages off of it-->
-
     <!-- Set font type and viewpoint-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,10 +48,11 @@ Document
     <!--link rel="icon" href="images/favicon-32x32.png" type="image/x.icon"-->
 
     <!--Linking the css and js file-->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <script defer src="index.js"></script>
 </head>
 <body>
+  <!--Header with nav bar-->
   <header>
     <div class="container">
       <h1>Nat Krah</h1>
@@ -67,6 +67,7 @@ Document
     </div>
   </header>
 
+  <!--About section-->
   <section id="about" class="section">
     <div class="container">
       <h2>About</h2>
@@ -76,85 +77,123 @@ Document
         </div>
         <div class="about-text">
           <p>
-            Hi! I'm Nat, a second year at RIT studing mechanical, aerospace, and computer engineering. For as long as I can remember I've loved putting things together.
-            From simple lego robotics in Elementery school to speocalizing in designing complex parts for a non-uniform robotic arm.         
-            My life has been a series of projects, and this website is an attempt to document it's highlights. 
+            Hi! <br> I'm Nat, a second year at RIT studing mechanical, aerospace, and computer engineering. For as long as I can remember I've loved putting things together.
+            From simple legos in Elementery school to speocalizing in designing complex parts for a non-uniform robotic arm.         
+            My life has been a series of projects, and this website is an attempt to document there highlights.
           </p>
         </div>
       </div>
     </div>
   </section>
 
+
+  <!--Project Section-->
   <section id="projects" class="section">
     <div class="container">
       <h2>Projects</h2>
 
-      <div class="project">
-        <div class="project-image">
-          <img src="images/project1-placeholder.jpg" alt="Project 1" />
+      <div class="projects-scroll">
+        
+        <!--Cubesat-->
+        <div class="project">
+          <div class="project-image">
+            <img src="img/mainCubesat" alt="" />
+          </div>
+          <div class="project-text">
+            <h3>SPEX CubeSat</h3>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia sunt cumque rem blanditiis...vuccycytcytcytcytcycytcytcyccytcyc Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, fuga vitae. Quod aliquid libero dignissimos! Explicabo, pariatur voluptatum sequi quia blanditiis harum accusantium at iure quaerat veniam temporibus dolor accusamus.
+            </p>
+            <a class="project-btn" href="projectPages/cubesat.html">View Project</a>
+          </div>
         </div>
-        <div class="project-text">
-          <h3><a href="project1.html">SPEX CubeSat</a></h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia sunt cumque rem blanditiis quibusdam in necessitatibus? Et nam aliquam quis impedit, corrupti odio error nostrum, dolor eligendi laudantium aperiam eos.
-          </p>
+
+        <!--All Seeing Eye-->
+        <div class="project">
+          <div class="project-image">
+            <img src="img/mainAllSeeing" alt="" />
+          </div>
+          <div class="project-text">
+            <h3>All Seeing Eye</h3>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia sunt cumque rem blanditiis...vuccycytcytcytcytcycytcytcyccytcyc Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, fuga vitae. Quod aliquid libero dignissimos! Explicabo, pariatur voluptatum sequi quia blanditiis harum accusantium at iure quaerat veniam temporibus dolor accusamus.
+            </p>
+            <a class="project-btn" href="project1.html">View Project</a>
+          </div>
         </div>
+
+        <!--Personal Website-->
+        <div class="project">
+          <div class="project-image">
+            <img src="img/mainPersonalWebsite" alt="" />
+          </div>
+          <div class="project-text">
+            <h3>Personal Website</h3>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia sunt cumque rem blanditiis...vuccycytcytcytcytcycytcytcyccytcyc Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, fuga vitae. Quod aliquid libero dignissimos! Explicabo, pariatur voluptatum sequi quia blanditiis harum accusantium at iure quaerat veniam temporibus dolor accusamus.
+            </p>
+            <a class="project-btn" href="project1.html">View Project</a>
+          </div>
+        </div>
+
+        <!--VEX Over Under-->
+        <div class="project">
+          <div class="project-image">
+            <img src="img/mainOverUnder" alt="" />
+          </div>
+          <div class="project-text">
+            <h3>VEX Over Under</h3>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia sunt cumque rem blanditiis...vuccycytcytcytcytcycytcytcyccytcyc Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, fuga vitae. Quod aliquid libero dignissimos! Explicabo, pariatur voluptatum sequi quia blanditiis harum accusantium at iure quaerat veniam temporibus dolor accusamus.
+            </p>
+            <a class="project-btn" href="project1.html">View Project</a>
+          </div>
+        </div>
+
+        <!--Floating Turbin-->
+        <div class="project">
+          <div class="project-image">
+            <img src="img/mainFloatingTurbin" alt="" />
+          </div>
+          <div class="project-text">
+            <h3>Floating Turbin</h3>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia sunt cumque rem blanditiis...vuccycytcytcytcytcycytcytcyccytcyc Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, fuga vitae. Quod aliquid libero dignissimos! Explicabo, pariatur voluptatum sequi quia blanditiis harum accusantium at iure quaerat veniam temporibus dolor accusamus.
+            </p>
+            <a class="project-btn" href="project1.html">View Project</a>
+          </div>
+        </div>
+
+        <!--Electric Car-->
+        <div class="project">
+          <div class="project-image">
+            <img src="img/mainECar" alt="" />
+          </div>
+          <div class="project-text">
+            <h3>Electric Car</h3>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia sunt cumque rem blanditiis...vuccycytcytcytcytcycytcytcyccytcyc Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, fuga vitae. Quod aliquid libero dignissimos! Explicabo, pariatur voluptatum sequi quia blanditiis harum accusantium at iure quaerat veniam temporibus dolor accusamus.
+            </p>
+            <a class="project-btn" href="project1.html">View Project</a>
+          </div>
+        </div>
+
       </div>
 
-      <div class="project">
-        <div class="project-image">
-          <img src="images/project2-placeholder.jpg" alt="Project 2" />
+        <!--Links at bottom of project section-->
+        <div class="project-links">
+          <a href="miniProjects.html" class="secondary-button">Mini Projects</a>
+          <a href="listProjects.html" class="secondary-button">List Projects</a>
         </div>
-        <div class="project-text">
-          <h3><a href="project2.html">All Seeing Eye</a></h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci molestiae illo impedit voluptates perferendis ipsum, tenetur officiis velit aut quae eveniet consequatur at expedita repellat autem obcaecati? Quae, quo. Nostrum.
-          </p>
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="project-image">
-          <img src="images/project3-placeholder.jpg" alt="Project 3" />
-        </div>
-        <div class="project-text">
-          <h3><a href="project3.html">VEX Over Under Robot</a></h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptas optio atque provident facere illum dignissimos quidem, quod deleniti facilis est repellendus neque! Optio tempore animi quibusdam vitae magni expedita.
-          </p>
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="project-image">
-          <img src="images/project4-placeholder.jpg" alt="Project 4" />
-        </div>
-        <div class="project-text">
-          <h3><a href="project3.html">Vertical Metal Organizers</a></h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptas optio atque provident facere illum dignissimos quidem, quod deleniti facilis est repellendus neque! Optio tempore animi quibusdam vitae magni expedita.
-          </p>
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="project-image">
-          <img src="images/project5-placeholder.jpg" alt="Project 5" />
-        </div>
-        <div class="project-text">
-          <h3><a href="project3.html">Electric Car</a></h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptas optio atque provident facere illum dignissimos quidem, quod deleniti facilis est repellendus neque! Optio tempore animi quibusdam vitae magni expedita.
-          </p>
-        </div>
-      </div>
-
     </div>
   </section>
 
+  <!--Contact section-->
   <section id="contact" class="section">
     <div class="container">
       <h2>Contact</h2>
+
+      <!--Contact form-->
       <form>
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required />
@@ -168,14 +207,17 @@ Document
         <button type="submit">Send Message</button>
       </form>
 
+      <!--Linktree-->
       <div class="social-links">
         <a href="https://github.com/nat-krah" target="_blank"><img src="img/github.png" alt="Github" class="contactIMG" width="50"></a>
         <a href="https://www.linkedin.com/in/nat-krah/" target="_blank"><img src="img/linkedin.png" alt="LinkedIn" class="contactIMG" width="50"></a>
-        <a href="" target="_blank"><img src="img/mail.png" alt="Mail" class="contactIMG" width="50"></a>
+        <a href="mailto:nicholaskrah1@gmail.com" target="_blank"><img src="img/mail.png" alt="Mail" class="contactIMG" width="50"></a>
       </div>
     </div>
   </section>
 
+  <!--Footer with copyright
+  Is currently hidden cause I probably don't need-->
   <footer>
       <p>&copy; 2025 Nat Krah</p>
   </footer>

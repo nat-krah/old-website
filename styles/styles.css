@@ -1,0 +1,251 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Applied to each section */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* Header section */
+header {
+  background-color: #1a1a1a;
+  padding: 40px 0;
+  text-align: center;
+  border-bottom: 2px solid #007acc;
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+header p {
+  color: #cccccc;
+}
+
+/*Nav Bar*/
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #007acc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #ffffff;
+}
+
+
+/*CSS for each section*/
+.section {
+  padding: 60px 0;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+h2 {
+  color: #007acc;
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+/*About section*/
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.about-image img {
+  width: 300px;
+  max-width: 100%;
+  border: 2px solid #007acc;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.about-image {
+  flex: 1 1 300px;
+}
+.about-text {
+  flex: 2 1 400px;
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+
+/* Horizontal scroll wrapper */
+.projects-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 20px;
+  scroll-snap-type: x mandatory;
+}
+.projects-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.projects-scroll::-webkit-scrollbar-thumb {
+  background-color: #007acc;
+  border-radius: 4px;
+}
+
+/* Project cards */
+.project {
+  flex: 0 0 300px;
+  background-color: #1f1f1f;
+  border: 1px solid #007acc;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+  padding: 15px;
+  position: relative;
+}
+.project-image{
+  width: 100%;
+  border-radius: 4px;
+}
+.project h3 {
+  margin-top: 10px;
+  color: #ffffff;
+}
+.project p {
+  color: #cccccc;
+  font-size: 0.9em;
+  margin-bottom: 50px; /* leave space for button */
+}
+.project-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  padding: 6px 12px;
+  background-color: #007acc;
+  color: white;
+  text-decoration: none;
+  font-size: 0.85em;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.secondary-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: none;
+    border: 2px solid #4da6ff;
+    color: #4da6ff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.project-btn:hover {
+  background-color: #005f99;
+}
+
+.project-links{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: space-between;
+}
+
+
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form label {
+  margin: 10px 0 5px;
+   font-size: 1.1em;
+  margin: 10px 0 5px;
+  color: #e0e0e0; /* softer white */
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  background-color: #2a2a2a;
+ font-size: 1.05em;
+  line-height: 1.5;
+  padding: 12px;
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+  border: 1px solid #007acc;}
+
+form button {
+  background-color: #007acc;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  font-size: 1em;
+  padding: 12px;
+  background-color: #007acc;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #005f99;
+}
+
+.social-links {
+  margin-top: 40px;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;  
+}
+
+.social-links a {
+  color: #007acc;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+
+footer {
+  background-color: #1a1a1a;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  color: #888888;
+  font-size: 0.9em;
+  display: none;
+}
