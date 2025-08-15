@@ -1,27 +1,38 @@
 <!--
 To Do
 
+Snake
+- fix colision bug
+- Make it work on small screen
+
+Document
+- Add comments
+- Make generally more readable
+- reduce the number of useless divs
+- sync head with subpages
+- add color picker and snake to sub pages
+- compress images to be more data efficient 
+- Add animation to all buttons
+- Clean up all code
+
+
+Content
+
+
 About:
 - Actual professional photo
 - Maybe rewrite text
-- Change how text wraps around
+- Make sure it doesn't get stretched when shrinking down
 
 Projects:
 - Add a small square image for each
 - Write Abouts for each
 - Make indepth page for each
 
-Contact
-- Maybe remove Email section
-- Make font more readable
-- Make it so the main text box can't be resized off of the page
+Color picker
+- Fix light mode with images
 
-Document
-- Add comments
-- Make generally more readable
-- reduce the number of useless divs
-- Add faveicon
-- compress images to be more data efficient 
+
 -->
 
 
@@ -42,16 +53,55 @@ Document
     <meta name="--Author" content="Nat Krah">
 
     <!-- Title of the website-->
-    <title>Nat-Krah</title>
+    <title>Nat Krah</title>
 
     <!--Add an cool icon-->
-    <!--link rel="icon" href="images/favicon-32x32.png" type="image/x.icon"-->
+    <link rel="icon" href="img/faveicon.png" type="image/x.icon">
 
     <!--Linking the css and js file-->
     <link rel="stylesheet" href="styles/styles.css">
-    <script defer src="index.js"></script>
+    <script defer src="js/script.js"></script>
 </head>
-<body>
+  <body>
+
+  <!-- Color selector Dropdown -->
+  <div class="color-wrapper">
+    <button id="colorBtn" aria-haspopup="true" aria-expanded="false" aria-label="Color">
+      lol
+      <img id="color-selector-img"src="/img/color-wheel.png" alt="Color Wheel" with="24">
+    </button>
+    <div id="colorDropdown" class="color-dropdown" aria-label="Color menu" hidden>
+      <div class="color-section toggle-section">
+        <p>Dark Mode: </p>
+        <label class="switch" for="lightModeToggle">
+          <input type="checkbox" id="lightModeToggle">
+          <span class="slider round"></span>
+        </label> 
+      </div>
+
+
+      <div class="color-section">
+        <p>Preset Colors:</p>
+        <div class="preset-colors">
+          <button class="color-preset" data-color="#007acc" style="background:#007acc" aria-label="Blue"></button>
+          <button class="color-preset" data-color="#ff6600" style="background:#ff6600" aria-label="Orange"></button>
+          <button class="color-preset" data-color="#00cc66" style="background:#00cc66" aria-label="Green"></button>
+          <button class="color-preset" data-color="#cc33ff" style="background:#cc33ff" aria-label="Purple"></button>
+        </div>
+      </div>
+
+      <div class="color-section">
+        <label for="customColorPicker">Custom Color:</label>
+        <input type="color" id="customColorPicker" />
+      </div>
+    </div>
+  </div>
+
+  <!--Link to snake game-->
+  <a id="snake-link" href="sub-pages/snake.html">&#128013;</a>
+  <p id="snake-hint"></p>
+
+
   <!--Header with nav bar-->
   <header>
     <div class="container">
@@ -62,6 +112,7 @@ Document
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="/assets/resume.pdf" target="_blank">Resume</a></li>
+          <li><a href="#" id="toggleFun">Fun!</a></li>
         </ul>
       </nav>
     </div>
@@ -72,20 +123,15 @@ Document
     <div class="container">
       <h2>About</h2>
       <div class="about-content">
-        <div class="about-image">
-          <img src="img/about-placeholder.png" alt="Nat Krah" />
-        </div>
-        <div class="about-text">
-          <p>
-            Hi! <br> I'm Nat, a second year at RIT studing mechanical, aerospace, and computer engineering. For as long as I can remember I've loved putting things together.
-            From simple legos in Elementery school to speocalizing in designing complex parts for a non-uniform robotic arm.         
-            My life has been a series of projects, and this website is an attempt to document there highlights.
-          </p>
-        </div>
+        <img src="https://placehold.co/300x300" alt="Nat Krah" id="about-image" width="300"/>
+        <p class="about-text">
+          Hi! <br> I'm Nat, a second year at RIT studing mechanical, aerospace, and computer engineering. For as long as I can remember I've loved putting things together.
+          From simple legos in Elementery school to speocalizing in designing complex parts for a non-uniform robotic arm.         
+          My life has been a series of projects, and this website is an attempt to document there highlights.
+        </p>
       </div>
     </div>
   </section>
-
 
   <!--Project Section-->
   <section id="projects" class="section">
@@ -96,23 +142,19 @@ Document
         
         <!--Cubesat-->
         <div class="project">
-          <div class="project-image">
-            <img src="img/mainCubesat" alt="" />
-          </div>
+          <img src="https://placehold.co/800x400" alt="" class="project-image"/>
           <div class="project-text">
             <h3>SPEX CubeSat</h3>
             <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia sunt cumque rem blanditiis...vuccycytcytcytcytcycytcytcyccytcyc Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, fuga vitae. Quod aliquid libero dignissimos! Explicabo, pariatur voluptatum sequi quia blanditiis harum accusantium at iure quaerat veniam temporibus dolor accusamus.
             </p>
-            <a class="project-btn" href="projectPages/cubesat.html">View Project</a>
+            <a class="project-btn" href="project-pages/cubesat.html">View Project</a>
           </div>
         </div>
 
         <!--All Seeing Eye-->
         <div class="project">
-          <div class="project-image">
-            <img src="img/mainAllSeeing" alt="" />
-          </div>
+          <img src="https://placehold.co/600x400" alt="" class="project-image"/>
           <div class="project-text">
             <h3>All Seeing Eye</h3>
             <p>
@@ -124,9 +166,7 @@ Document
 
         <!--Personal Website-->
         <div class="project">
-          <div class="project-image">
-            <img src="img/mainPersonalWebsite" alt="" />
-          </div>
+          <img src="https://placehold.co/600x400" alt="" class="project-image"/>
           <div class="project-text">
             <h3>Personal Website</h3>
             <p>
@@ -138,9 +178,7 @@ Document
 
         <!--VEX Over Under-->
         <div class="project">
-          <div class="project-image">
-            <img src="img/mainOverUnder" alt="" />
-          </div>
+          <img src="https://placehold.co/600x400" alt="" class="project-image"/>
           <div class="project-text">
             <h3>VEX Over Under</h3>
             <p>
@@ -152,9 +190,7 @@ Document
 
         <!--Floating Turbin-->
         <div class="project">
-          <div class="project-image">
-            <img src="img/mainFloatingTurbin" alt="" />
-          </div>
+          <img src="https://placehold.co/600x400" alt="" class="project-image"/>
           <div class="project-text">
             <h3>Floating Turbin</h3>
             <p>
@@ -166,9 +202,7 @@ Document
 
         <!--Electric Car-->
         <div class="project">
-          <div class="project-image">
-            <img src="img/mainECar" alt="" />
-          </div>
+          <img src="https://placehold.co/600x400" alt="" class="project-image"/>
           <div class="project-text">
             <h3>Electric Car</h3>
             <p>
@@ -177,23 +211,39 @@ Document
             <a class="project-btn" href="project1.html">View Project</a>
           </div>
         </div>
-
       </div>
 
         <!--Links at bottom of project section-->
         <div class="project-links">
-          <a href="miniProjects.html" class="secondary-button">Mini Projects</a>
-          <a href="listProjects.html" class="secondary-button">List Projects</a>
+          <a href="sub-pages/project-mini.html" class="secondary-button">Mini Projects</a>
+          <a href="sub-pages/project-list.html" class="secondary-button">List Projects</a>
         </div>
     </div>
   </section>
+  
+  <section id="personal" class="section personal-post">
+  <div class="container">
+    <h2>Personal</h2>
+    <article class="post">
+      <img src="https://placehold.co/600x400" alt="Placeholder" class="post-image">
+      <div class="post-content">
+        <h3>Lorem ipsum dolor sit amet</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ipsa non eum quod odit, error ullam, laudantium dolorem animi soluta alias accusamus vitae. Tempore fugit ex nihil iure? Delectus hic dolore alias sit, fuga molestias nam cumque voluptatum ducimus quas consectetur repellendus molestiae officia rem modi voluptatem dolores sequi dolor laboriosam minus? Aperiam atque placeat cupiditate in eos tenetur amet odio! Rem nostrum vitae, rerum laudantium impedit ex dolor labore consequatur nihil placeat quia explicabo eum commodi, eius minus. Recusandae sint autem, quod ex aliquam, reiciendis accusamus deserunt veniam iure nulla minus suscipit rem vero tenetur tempore eveniet nesciunt harum.
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+
+
 
   <!--Contact section-->
   <section id="contact" class="section">
     <div class="container">
-      <h2>Contact</h2>
+      <!--h2>Contact</h2>
 
-      <!--Contact form-->
+      <Contact form>
       <form>
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required />
@@ -205,7 +255,7 @@ Document
         <textarea id="message" name="message" rows="5" required></textarea>
 
         <button type="submit">Send Message</button>
-      </form>
+      </form-->
 
       <!--Linktree-->
       <div class="social-links">
