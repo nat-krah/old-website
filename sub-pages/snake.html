@@ -23,6 +23,17 @@
     <!--Linking the css and js file-->
     <link rel="stylesheet" href="../styles/styles.css">
     <script defer src="../js/snake.js"></script>
+
+<!--Load the current theme-->
+    <script>
+      (function() {
+        const savedMode = localStorage.getItem('mode') || 'dark';
+        const savedColor = localStorage.getItem('primaryColor') || '#007acc';
+        document.documentElement.setAttribute('data-theme', savedMode);
+        document.documentElement.style.setProperty('--primary-color', savedColor);
+      })();
+    </script>
+
 </head>
 <body>
     <section class="snake-section">

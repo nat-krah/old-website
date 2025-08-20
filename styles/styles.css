@@ -197,10 +197,7 @@ input[type="color"] {
   display: flex;
   align-items: center;
   justify-content: flex-start; 
-}
-
-.toggle-section p {
-  margin: 0;
+  gap: 15px;
 }
 
 /* Code for toggle switch*/
@@ -407,7 +404,7 @@ nav ul li a:hover::after {
 .project-image{
   width: 100%;
   border-radius: 4px;
-  transition: transform 0.4s ease;
+  transition: opacity 0.4s ease;
 }
 .project:hover .project-image {
   transform: scale(1.05);
@@ -419,7 +416,6 @@ nav ul li a:hover::after {
 .project p {
   color: var(--sub-text-coolor);
   font-size: 0.9em;
-  margin-bottom: 50px; /* leave space for button */
   margin-bottom: 0px;
 }
 .project h3 a {
@@ -429,6 +425,10 @@ nav ul li a:hover::after {
 .project h3 a:hover {
   text-decoration: underline;
   color: var(--primary-color);
+}
+
+.has-link p{
+  margin-bottom: 50px;
 }
 
 .project-btn {
@@ -441,8 +441,28 @@ nav ul li a:hover::after {
   text-decoration: none;
   font-size: 0.85em;
   border-radius: 4px;
-  transition: background-color 0.3s;
   display: none;
+}
+
+.project-link {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  padding: 6px 12px;
+  font-size: 0.85em;
+  transition: background-color 0.3s;
+}
+
+.project-link-text{
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  padding: 6px 12px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: .85rem;
+  border-radius: 4px;
 }
 
 /*Buttons outside of project section */
@@ -497,6 +517,14 @@ nav ul li a:hover::after {
   gap: 20px;
   padding-bottom: 20px;
   scroll-snap-type: x mandatory;
+}
+
+.slideshow {
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out; /* fade speed */
+}
+.slideshow.fade-out {
+  opacity: 0;
 }
 
 
@@ -614,10 +642,13 @@ form button:hover {
   margin: 0 10px;
 }
 
-.social-links a:hover {
+a.light:hover {
   filter: brightness(75%);
 }
 
+a.dark:hover {
+  filter: brightness(5);
+}
 
 footer {
   background-color: var(--header-bg);
@@ -628,6 +659,36 @@ footer {
   font-size: 0.9em;
   display: none;
 }
+
+/********************************************************************************\
+*                                                                                *
+*                                Expand images                                   *
+*                                                                                *
+\********************************************************************************/
+
+#imageOverlay {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#imageOverlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  cursor: zoom-out;
+}
+
+
 
 /********************************************************************************\
 *                                                                                *

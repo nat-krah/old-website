@@ -23,6 +23,17 @@
     <!--Linking the css and js file-->
     <link rel="stylesheet" href="../styles/styles.css">
     <script defer src="../js/script.js"></script>
+
+    <!--Load the current theme-->
+    <script>
+      (function() {
+        const savedMode = localStorage.getItem('mode') || 'dark';
+        const savedColor = localStorage.getItem('primaryColor') || '#007acc';
+        document.documentElement.setAttribute('data-theme', savedMode);
+        document.documentElement.style.setProperty('--primary-color', savedColor);
+      })();
+    </script>
+
 </head>
 <body>
   <!--Header with nav bar-->
@@ -31,9 +42,9 @@
       <h1><a class="homeBtn"href="../index.html">Nat Krah</a></h1>
       <nav>
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
           <li><a href="/assets/resume.pdf" target="_blank">Resume</a></li>
         </ul>
       </nav>
@@ -48,7 +59,7 @@
       <div class="project project-list">
         <img src="https://placehold.co/300x300" alt="Project 1" class="project-list-image" />
         <div class="project-text">
-          <h3><a href="project1.html">Snake in Terminal</a></h3>
+          <h3><a href="project1.html">C++ Snake using Terminal</a></h3>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia sunt cumque rem blanditiis quibusdam in necessitatibus? Et nam aliquam quis impedit, corrupti odio error nostrum, dolor eligendi laudantium aperiam eos.
           </p>
@@ -78,7 +89,7 @@
       <div class="project project-list">
         <img src="https://placehold.co/300x300" alt="Project 1" class="project-list-image" />
         <div class="project-text">
-          <h3><a href="project1.html">Snake in Terminal</a></h3>
+          <h3><a href="project1.html">Sandy the Beach Cleanup Robot</a></h3>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia sunt cumque rem blanditiis quibusdam in necessitatibus? Et nam aliquam quis impedit, corrupti odio error nostrum, dolor eligendi laudantium aperiam eos.
           </p>

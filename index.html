@@ -4,16 +4,25 @@ To Do
 Snake
 - fix colision bug
 - Make it work on small screen
+- Make snake stop at some point and display a click me! text bubble
+
+Add Photos to Fun! section
 
 Document
 - Add comments
 - Make generally more readable
-- reduce the number of useless divs
 - sync head with subpages
-- add color picker and snake to sub pages
 - compress images to be more data efficient 
-- Add animation to all buttons
 - Clean up all code
+
+cleanup javascript
+make it so the slideshow resets when the mouse leaves
+
+
+- Add github links to everything that has a github page
+when hovering over photos, cycle through photos of the project
+clicking enlargens that photo
+Would need to change text
 
 
 Content
@@ -21,18 +30,6 @@ Content
 
 About:
 - Actual professional photo
-- Maybe rewrite text
-- Make sure it doesn't get stretched when shrinking down
-
-Projects:
-- Add a small square image for each
-- Write Abouts for each
-- Make indepth page for each
-
-Color picker
-- Fix light mode with images
-
-
 -->
 
 
@@ -61,11 +58,21 @@ Color picker
     <!--Linking the css and js file-->
     <link rel="stylesheet" href="styles/styles.css">
     <script defer src="js/script.js"></script>
+
+    <!--Load the current theme-->
+    <script>
+      (function() {
+        const savedMode = localStorage.getItem('mode') || 'dark';
+        const savedColor = localStorage.getItem('primaryColor') || '#007acc';
+        document.documentElement.setAttribute('data-theme', savedMode);
+        document.documentElement.style.setProperty('--primary-color', savedColor);
+      })();
+    </script>
 </head>
   <body>
 
   <!-- Color selector Dropdown -->
-  <div class="color-wrapper">
+  <div class="color-wrapper fun-hide">
     <button id="colorBtn" aria-haspopup="true" aria-expanded="false" aria-label="Color">
       lol
       <img id="color-selector-img"src="/img/color-wheel.png" alt="Color Wheel" with="24">
@@ -98,7 +105,7 @@ Color picker
   </div>
 
   <!--Link to snake game-->
-  <a id="snake-link" href="sub-pages/snake.html">&#128013;</a>
+  <a id="snake-link" class="fun-hide" href="sub-pages/snake.html">&#128013;</a>
   <p id="snake-hint"></p>
 
 
@@ -119,11 +126,11 @@ Color picker
   </header>
 
   <!--About section-->
-  <section id="about" class="section">
+  <section id="about" class="section fun-show">
     <div class="container">
       <h2>About</h2>
       <div class="about-content">
-        <img src="https://placehold.co/300x300" alt="Nat Krah" id="about-image" width="300"/>
+        <img src="https://placehold.co/300x300" class="enlargeable" alt="Nat Krah" id="about-image" width="300"/>
         <p class="about-text">
           Hi! <br> I'm Nat, a second year at RIT studing mechanical, aerospace, and computer engineering. For as long as I can remember I've loved putting things together.
           From simple legos in Elementery school to speocalizing in designing complex parts for a non-uniform robotic arm.         
@@ -141,76 +148,128 @@ Color picker
       <div class="projects-scroll">
         
         <!--Cubesat-->
-        <div class="project">
-          <img src="https://placehold.co/800x400" alt="" class="project-image"/>
+        <div id="cubesat" class="project">
+          <img src="img/projects/cubesat/spex-hab-space.png" alt="" class="project-image enlargeable slideshow"/>
           <div class="project-text">
             <h3>SPEX CubeSat</h3>
             <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia sunt cumque rem blanditiis...vuccycytcytcytcytcycytcytcyccytcyc Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, fuga vitae. Quod aliquid libero dignissimos! Explicabo, pariatur voluptatum sequi quia blanditiis harum accusantium at iure quaerat veniam temporibus dolor accusamus.
+              In Cubesat we are exploring different radiation deflection.diversion methods in the hope of finding a lighter and cheaper way to protect electric components and astronauts. 
+              Additionally, we are working on the design and construction of several High Altitude Balloons (HABs) for individual component testing and practice assembly before working on a physical cubesat. 
+              Currently Payload Lead organizing efforts to asdasdasdasdasdaisdjoaisjd oiajdsiaoijdaoisjdoasjdo aijsdoiajsoidj
+              <br><br>
+              Photo: <i class="caption">Image from SPEX High Altitude Balloon</i>
             </p>
             <a class="project-btn" href="project-pages/cubesat.html">View Project</a>
           </div>
         </div>
 
         <!--All Seeing Eye-->
-        <div class="project">
-          <img src="https://placehold.co/600x400" alt="" class="project-image"/>
+        <div id="all-seeing-eye" class="project">
+          <img src="https://placehold.co/600x400" alt="" class="project-image enlargeable slideshow"/>
           <div class="project-text">
             <h3>All Seeing Eye</h3>
             <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia sunt cumque rem blanditiis...vuccycytcytcytcytcycytcytcyccytcyc Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, fuga vitae. Quod aliquid libero dignissimos! Explicabo, pariatur voluptatum sequi quia blanditiis harum accusantium at iure quaerat veniam temporibus dolor accusamus.
+                The "All Seeing Eye" is a robotic tentacle that moves in complex patterns and will use machine vision to track peoples faces. 
+                While working on the Mechanical team we redesigned and rebuilt the entire arm and power system to reduce strain on the stepper motors and core. 
+                This coming semester I will be working as co-lead and hope to finish the rebuild and integrate the machine vision
+                <br><br>
+                Photo: <i class="caption">All Seeing Eye at Imagine RIT</i>
             </p>
             <a class="project-btn" href="project1.html">View Project</a>
           </div>
         </div>
 
         <!--Personal Website-->
-        <div class="project">
-          <img src="https://placehold.co/600x400" alt="" class="project-image"/>
+        <div id="website" class="project has-link">
+          <img src="img/projects/website-images/homepage.png" alt="" class="project-image enlargeable slideshow"/>
           <div class="project-text">
             <h3>Personal Website</h3>
             <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia sunt cumque rem blanditiis...vuccycytcytcytcytcycytcytcyccytcyc Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, fuga vitae. Quod aliquid libero dignissimos! Explicabo, pariatur voluptatum sequi quia blanditiis harum accusantium at iure quaerat veniam temporibus dolor accusamus.
+              As stated previously, this website is designed to showcase my projects over the years. 
+              The frontend is built with HTML and CSS, and the backend uses Javascript. 
+              I hope to add more detailed documentation of my projects and add more to the personal side.
+              <br><br>
+              Photo: <i class="caption">Homepage screenshot</i>
             </p>
+            <a href="https://github.com/nat-krah/website" class="light project-link" target="_blank"><img src="img/light-github.png" alt="Github"  width="40"></a>
+            <a href="https://github.com/nat-krah/website" class="dark project-link" target="_blank"><img src="img/dark-github.png" alt="Github" width="40"></a>
             <a class="project-btn" href="project1.html">View Project</a>
           </div>
         </div>
 
         <!--VEX Over Under-->
-        <div class="project">
-          <img src="https://placehold.co/600x400" alt="" class="project-image"/>
-          <div class="project-text">
+        <div id="vex-over-under" class="project">
+          <div class="project-text has-link">
+            <img src="img/projects/vex-over-under/red-leds.jpg" alt="" class="project-image enlargeable slideshow"/>
             <h3>VEX Over Under</h3>
             <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia sunt cumque rem blanditiis...vuccycytcytcytcytcycytcytcyccytcyc Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, fuga vitae. Quod aliquid libero dignissimos! Explicabo, pariatur voluptatum sequi quia blanditiis harum accusantium at iure quaerat veniam temporibus dolor accusamus.
+              Robot designed and built to compete in VEX&#39;s Over Under Challenge. 
+              First iteration featured a four motor PTO, catapult, intake, sleds, and pneumatic “wings”. 
+              Second iteration featured a band assisted elevation mechanism, a raised puncher, a pneumatic blocker, an intake, sleds, and wings. 
+              I was co-lead and worked on CAD Model, Building, Coding, Notebook and was primary driver at competition.
+              Reached Semi Finals in States
+
+              <br><br>
+              Photo: <i class="caption">Showcasing robot with red LEDs</i>
             </p>
+            <a class="project-link-text" href="https://docs.google.com/presentation/d/1QLLU6wRsXruq7wP_DeBp-vIeSC1auTgN/edit?usp=sharing&ouid=118344373854695580405&rtpof=true&sd=true" target="_blank">Full Documentation</a>
             <a class="project-btn" href="project1.html">View Project</a>
           </div>
         </div>
 
-        <!--Floating Turbin-->
-        <div class="project">
-          <img src="https://placehold.co/600x400" alt="" class="project-image"/>
+        <!--Floating Wind Turbine-->
+        <div id="floating-turbine" class="project">
+          <img src="img/projects/wind-turbine/windstorm.jpg" alt="" class="project-image enlargeable slideshow"/>
           <div class="project-text">
-            <h3>Floating Turbin</h3>
+            <h3>Floating Wind Turbine</h3>
             <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia sunt cumque rem blanditiis...vuccycytcytcytcytcycytcytcyccytcyc Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, fuga vitae. Quod aliquid libero dignissimos! Explicabo, pariatur voluptatum sequi quia blanditiis harum accusantium at iure quaerat veniam temporibus dolor accusamus.
+              With the increasing threat of global warming, now, more than ever, it is vital that we work to build clean, reliable energy sources. 
+              A friend and I designed a method of supporting an offshore wind turbine. 
+              It features a long cylindrical base with a massive weight on the bottom. 
+              Competed in UMaine&#39;s Windstorm Challenge.
+              <br><br>
+              Photo: <i class="caption">Wind turbine competing at UMaine&#39;s Windstorm Challenge</i>
             </p>
             <a class="project-btn" href="project1.html">View Project</a>
           </div>
         </div>
 
-        <!--Electric Car-->
+        <!--Electric car-->
         <div class="project">
-          <img src="https://placehold.co/600x400" alt="" class="project-image"/>
+          <img src="https://placehold.co/600x400" alt="" class="project-image enlargeable"/>
           <div class="project-text">
             <h3>Electric Car</h3>
             <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia sunt cumque rem blanditiis...vuccycytcytcytcytcycytcytcyccytcyc Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, fuga vitae. Quod aliquid libero dignissimos! Explicabo, pariatur voluptatum sequi quia blanditiis harum accusantium at iure quaerat veniam temporibus dolor accusamus.
+              Tasked with designing a low power, light weight, electric car to race in Electrathon America. 
+              This was our solution, it was smaller than previous models and had consistently better handling. 
+              I worked on the backend, designing a place for the motor, batteries, ballast, and various electrical componen00003262347278ts. 
+              <br><br>
+              Photo: <i class="caption">asdasadnoasdoin</i>
+
             </p>
             <a class="project-btn" href="project1.html">View Project</a>
           </div>
         </div>
+
+        <!--Spin Up-->
+        <div id="spin-up" class="project">
+          <img src="img/projects/vex-spin-up/disk.jpeg" alt="" class="project-image enlargeable slideshow"/>
+          <div class="project-text has-link">
+            <h3>Spin Up</h3>
+            <p>
+              Robot designed to compete in VEX&#39;s Spin Up Challenge. 
+              First iteration featured ratcheting 3000 rpm 4” flywheel, top loading hopper, and intake. 
+              Second iteration featured 3600 rpm 3” two stage flywheel, bottom loading hopper, intake, roller, string launcher, sleds, and custom odometry for position tracking. 
+              I specialised in the intake and hopper system and string launcher. 
+              <br>
+              <br>
+              Photo: <i class="caption">Robot launching disks</i>
+            </p>
+            <a href="https://youtu.be/c4fuzXSkvr8?t=29171" class="project-link-text" target="_blank">State Semi Finals</a>
+            <a class="project-btn" href="project1.html">View Project</a>
+          </div>
+        </div>
+
       </div>
 
         <!--Links at bottom of project section-->
@@ -241,30 +300,24 @@ Color picker
   <!--Contact section-->
   <section id="contact" class="section">
     <div class="container">
-      <!--h2>Contact</h2>
-
-      <Contact form>
-      <form>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit">Send Message</button>
-      </form-->
-
       <!--Linktree-->
       <div class="social-links">
-        <a href="https://github.com/nat-krah" target="_blank"><img src="img/github.png" alt="Github" class="contactIMG" width="50"></a>
-        <a href="https://www.linkedin.com/in/nat-krah/" target="_blank"><img src="img/linkedin.png" alt="LinkedIn" class="contactIMG" width="50"></a>
-        <a href="mailto:nicholaskrah1@gmail.com" target="_blank"><img src="img/mail.png" alt="Mail" class="contactIMG" width="50"></a>
+        <!--Light copies-->
+        <a href="https://github.com/nat-krah" class="light" target="_blank"><img src="img/light-github.png" alt="Github" class="contactIMG" width="50"></a>
+        <a href="https://www.linkedin.com/in/nat-krah/" class="light" target="_blank"><img src="img/light-linkedin.png" alt="LinkedIn" class="contactIMG" width="50"></a>
+        <a href="mailto:nicholaskrah1@gmail.com"class="light" target="_blank"><img src="img/light-mail.png" alt="Mail" class="contactIMG" width="50"></a>
+
+        <!--Dark copies-->
+        <a href="https://github.com/nat-krah" class="dark" target="_blank"><img src="img/dark-github.png" alt="Github" class="contactIMG" width="50"></a>
+        <a href="https://www.linkedin.com/in/nat-krah/" class="dark" target="_blank"><img src="img/dark-linkedin.png" alt="LinkedIn" class="contactIMG" width="50"></a>
+        <a href="mailto:nicholaskrah1@gmail.com" class="dark" target="_blank"><img src="img/dark-mail.png" alt="Mail" class="contactIMG" width="50"></a>
       </div>
     </div>
   </section>
+
+  <div id="imageOverlay">
+    <img id="overlayImage" src="" alt="Enlarged view">
+  </div>
 
   <!--Footer with copyright
   Is currently hidden cause I probably don't need-->
