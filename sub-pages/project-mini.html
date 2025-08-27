@@ -39,7 +39,7 @@
   <!--Header with nav bar-->
   <header>
     <div class="container">
-      <h1><a class="homeBtn"href="../index.html">Nat Krah</a></h1>
+      <h1><a class="homeBtn" href="../index.html">Nat Krah</a></h1>
       <nav>
         <ul>
           <li><a href="../index.html#about">About</a></li>
@@ -52,62 +52,95 @@
   </header>
 
   <!--Project Section-->
-  <section id="projects" class="section">
+  <section id="projects-list" class="section">
     <div class="container">
       <h2>Mini Projects</h2>
 
-      <div class="project project-list">
-        <img src="https://placehold.co/300x300" alt="Project 1" class="project-list-image" />
-        <div class="project-text">
-          <h3><a href="project1.html">C++ Snake using Terminal</a></h3>
+      <!--Snake in Unix Terminal-->
+      <div id="snake" class="item">
+        <img src="../img/mini-projects/snake/intro-sequence.png" alt="" class="item-image enlargeable slideshow">
+        <div class="item-content">
+          <h3>Snake in Terminal</h3>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia sunt cumque rem blanditiis quibusdam in necessitatibus? Et nam aliquam quis impedit, corrupti odio error nostrum, dolor eligendi laudantium aperiam eos.
+            As part of an effort to learn more c++ and Unix Terminals, I decided to code the game snake from the ground up. 
+            I used limited resources, only looked at ansi escape codes, terminal flags, and c++ documentation. 
+            Basic code was ported over to JavaScript and can be played <a href="snake.html" style="text-decoration: underline;">here</a>.
+            <br><br>
+            Photo: <i class="caption">Intro Sequence</i>
+          </p>
+          <a href="https://github.com/nat-krah/snake-cpp" class="light project-link" target="_blank"><img src="../img/light-github.png" alt="Github"  width="40"></a>
+          <a href="https://github.com/nat-krah/snake-cpp" class="dark project-link" target="_blank"><img src="../img/dark-github.png" alt="Github" width="40"></a>
+        </div>
+      </div>
+
+      <!--Arch linux-->
+      <div id="arch-linux" class="item">
+        <img src="../img/mini-projects/arch-linux/fastfetch.png" alt="" class="item-image enlargeable slideshow">
+        <div class="item-content">
+          <h3>Arch Linux</h3>
+          <p>
+            I recently switched to a different laptop, and decided that it would be a good opportunity to switch operating systems. 
+            I decided to switch to Arch Linux because its incredible customization would grant me a greater understanding of the inner workings of operating systems, reduce bloatware, streamline my workflow, and give me an opportunity to learn unix cli syntax.
+            <br><br>
+            Photo: <i class="caption">Basic Fastfetch showing Arch logo and laptop specs</i>
           </p>
         </div>
       </div>
 
-      <div class="project project-list">
-        <img src="https://placehold.co/300x300" alt="Project 1" class="project-list-image" />
-        <div class="project-text">
-          <h3><a href="project1.html">Arch Linux</a></h3>
+      <!--Lunar Lander-->
+      <div id="lunar-lander" class="item">
+        <img src="../img/mini-projects/lunar-lander/playing.png" alt="" class="item-image enlargeable slideshow">
+        <div class="item-content">
+          <h3>Lunar Lander (MECE 117)</h3>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia sunt cumque rem blanditiis quibusdam in necessitatibus? Et nam aliquam quis impedit, corrupti odio error nostrum, dolor eligendi laudantium aperiam eos.
+            Final project from my MECE 117 programming for engineers class. 
+            We were tasked with writing a simple lunar lander game in MATLAB. My game features custom terrain generation and unique graphics.
+            <br><br>
+            Photo: <i class="caption">Game being played</i>
+          </p>
+          <a href="https://github.com/nat-krah/lunar-lander" class="light project-link" target="_blank"><img src="../img/light-github.png" alt="Github"  width="40"></a>
+          <a href="https://github.com/nat-krah/lunar-lander" class="dark project-link" target="_blank"><img src="../img/dark-github.png" alt="Github" width="40"></a>
+        </div>
+      </div>
+
+      <!--Chime Machine-->
+      <div id="chime-machine" class="item">
+        <img src="../img/mini-projects/chime-machine/final-chime.JPG" alt="" class="item-image enlargeable slideshow">
+        <div class="item-content">
+          <h3>Chime Machine (MECE 104)</h3>
+          <p>
+            Final project for MECE 104, engineering design tools. 
+            Tasked with designing a machine to play a selected song with chimes using limited resources. 
+            Our design featured a cart with solenoids and two hammers that played repeating notes. 
+            I was tasked with designing and building the frame along with writing all of the code
+            <br><br>
+            Photo: <i class="caption">Final Chime Machine</i>
           </p>
         </div>
       </div>
 
-      <div class="project project-list">
-        <img src="https://placehold.co/300x300" alt="Project 2" class="project-list-image" />
-        <div class="project-text">
-          <h3><a href="project1.html">Snake in Terminal</a></h3>
+       <!--Sandy Beach Cleanup-->
+      <div id="beach-cleanup" class="item">
+        <img src="../img/mini-projects/sandy/fronISO.png" alt="" class="item-image enlargeable slideshow">
+        <div class="item-content">
+          <h3>Sandy the Beach Cleanup Robot</h3>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia sunt cumque rem blanditiis quibusdam in necessitatibus? Et nam aliquam quis impedit, corrupti odio error nostrum, dolor eligendi laudantium aperiam eos.
+            A challenge issued by Onshape challenged applicants to use vex materials to design a robot that would help the environment. 
+            My robotics team and I decided to tackle ocean trash with a beach cleanup robot. It would sift large sections of the sand and deposit any trash into a removable bin. 
+            I worked on the sifter and trash bin. 
+            <br><br>
+            Photo: <i class="caption">CAD view 1</i>
+            <br><br>
           </p>
         </div>
       </div>
-
-      <div class="project project-list">
-        <img src="https://placehold.co/300x300" alt="Project 1" class="project-list-image" />
-        <div class="project-text">
-          <h3><a href="project1.html">Sandy the Beach Cleanup Robot</a></h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia sunt cumque rem blanditiis quibusdam in necessitatibus? Et nam aliquam quis impedit, corrupti odio error nostrum, dolor eligendi laudantium aperiam eos.
-          </p>
-        </div>
-      </div>
-
-      <div class="project project-list">
-        <img src="https://placehold.co/300x300" alt="Project 1" class="project-list-image" />
-        <div class="project-text">
-          <h3><a href="project1.html">Snake in Terminal</a></h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia sunt cumque rem blanditiis quibusdam in necessitatibus? Et nam aliquam quis impedit, corrupti odio error nostrum, dolor eligendi laudantium aperiam eos.
-          </p>
-        </div>
-      </div>
-
     </div>
   </section>
+
+  <!--Background for when images are enlarged-->
+  <div id="imageOverlay">
+    <img id="overlayImage" src="" alt="Enlarged view">
+  </div>
     
 </body>
 </html>

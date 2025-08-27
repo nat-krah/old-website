@@ -2,31 +2,18 @@
 To Do
 
 Snake
+- Rewrite code tbh
 - fix colision bug
 - Make it work on small screen
 - Make snake stop at some point and display a click me! text bubble
 
-Add Photos to Fun! section
+make images .webp
 
-Document
-- Add comments
-- Make generally more readable
-- sync head with subpages
-- compress images to be more data efficient 
-- Clean up all code
+add alt for all photos
 
-cleanup javascript
-make it so the slideshow resets when the mouse leaves
+update images with new images
 
-
-- Add github links to everything that has a github page
-when hovering over photos, cycle through photos of the project
-clicking enlargens that photo
-Would need to change text
-
-
-Content
-
+make sure project section matches project-list
 
 About:
 - Actual professional photo
@@ -72,20 +59,19 @@ About:
   <body>
 
   <!-- Color selector Dropdown -->
-  <div class="color-wrapper fun-hide">
+  <div class="color-wrapper fun-item">
     <button id="colorBtn" aria-haspopup="true" aria-expanded="false" aria-label="Color">
       lol
-      <img id="color-selector-img"src="/img/color-wheel.png" alt="Color Wheel" with="24">
+      <img id="color-selector-img" src="/img/color-wheel.png" alt="Color Wheel">
     </button>
     <div id="colorDropdown" class="color-dropdown" aria-label="Color menu" hidden>
       <div class="color-section toggle-section">
         <p>Dark Mode: </p>
         <label class="switch" for="lightModeToggle">
-          <input type="checkbox" id="lightModeToggle">
+          <input type="checkbox" id="lightModeToggle" checked>
           <span class="slider round"></span>
         </label> 
       </div>
-
 
       <div class="color-section">
         <p>Preset Colors:</p>
@@ -94,20 +80,20 @@ About:
           <button class="color-preset" data-color="#ff6600" style="background:#ff6600" aria-label="Orange"></button>
           <button class="color-preset" data-color="#00cc66" style="background:#00cc66" aria-label="Green"></button>
           <button class="color-preset" data-color="#cc33ff" style="background:#cc33ff" aria-label="Purple"></button>
+          <button class="color-preset" data-color="#cd0c0c" style="background:#cd0c0c" aria-label="Red"></button>
         </div>
       </div>
 
       <div class="color-section">
         <label for="customColorPicker">Custom Color:</label>
-        <input type="color" id="customColorPicker" />
+        <input type="color" id="customColorPicker">
       </div>
     </div>
   </div>
 
   <!--Link to snake game-->
-  <a id="snake-link" class="fun-hide" href="sub-pages/snake.html">&#128013;</a>
-  <p id="snake-hint"></p>
-
+  <a id="snake-link" class="fun-item" href="sub-pages/snake.html">&#128013;</a>
+  <p id="snake-hint" class="fun-item"></p>
 
   <!--Header with nav bar-->
   <header>
@@ -126,13 +112,13 @@ About:
   </header>
 
   <!--About section-->
-  <section id="about" class="section fun-show">
+  <section id="about" class="section">
     <div class="container">
       <h2>About</h2>
       <div class="about-content">
-        <img src="https://placehold.co/300x300" class="enlargeable" alt="Nat Krah" id="about-image" width="300"/>
+        <img src="img/mai nPhoto.JPG" class="enlargeable" alt="Nat Krah" id="about-image" width="300">
         <p class="about-text">
-          Hi! <br> I'm Nat, a second year at RIT studing mechanical, aerospace, and computer engineering. For as long as I can remember I've loved putting things together.
+          Hi! <br> I'm Nat, a second year at RIT studying mechanical, aerospace, and computer engineering. For as long as I can remember I've loved putting things together.
           From simple legos in Elementery school to speocalizing in designing complex parts for a non-uniform robotic arm.         
           My life has been a series of projects, and this website is an attempt to document there highlights.
         </p>
@@ -144,121 +130,96 @@ About:
   <section id="projects" class="section">
     <div class="container">
       <h2>Projects</h2>
-
       <div class="projects-scroll">
         
         <!--Cubesat-->
         <div id="cubesat" class="project">
-          <img src="img/projects/cubesat/spex-hab-space.png" alt="" class="project-image enlargeable slideshow"/>
+          <img src="img/projects/cubesat/spex-hab-space.png" alt="" class="project-image enlargeable slideshow">
           <div class="project-text">
             <h3>SPEX CubeSat</h3>
             <p>
-              In Cubesat we are exploring different radiation deflection.diversion methods in the hope of finding a lighter and cheaper way to protect electric components and astronauts. 
-              Additionally, we are working on the design and construction of several High Altitude Balloons (HABs) for individual component testing and practice assembly before working on a physical cubesat. 
-              Currently Payload Lead organizing efforts to asdasdasdasdasdaisdjoaisjd oiajdsiaoijdaoisjdoasjdo aijsdoiajsoidj
+              In Cubesat we are exploring different radiation deflection/diversion methods in the hope of finding a lighter and cheaper way to protect electric components and astronauts. 
+              We are working on a small 1U cubesat with several radiation sensors to get baseline data and prove mission success before expanding to a full research satellite. 
+              Additionally, we are constructing several High Altitude Balloons (HABs) for individual component testing and practice assembly. 
+              I am working as Payload Lead organizing efforts to design radiation detectors to integrate with the larger 1U cubesat. 
               <br><br>
               Photo: <i class="caption">Image from SPEX High Altitude Balloon</i>
             </p>
-            <a class="project-btn" href="project-pages/cubesat.html">View Project</a>
           </div>
         </div>
 
         <!--All Seeing Eye-->
         <div id="all-seeing-eye" class="project">
-          <img src="https://placehold.co/600x400" alt="" class="project-image enlargeable slideshow"/>
+          <img src="https://placehold.co/600x400" alt="" class="project-image enlargeable slideshow">
           <div class="project-text">
             <h3>All Seeing Eye</h3>
             <p>
                 The "All Seeing Eye" is a robotic tentacle that moves in complex patterns and will use machine vision to track peoples faces. 
                 While working on the Mechanical team we redesigned and rebuilt the entire arm and power system to reduce strain on the stepper motors and core. 
-                This coming semester I will be working as co-lead and hope to finish the rebuild and integrate the machine vision
+                This coming semester I will be working as co-lead and hope to finish the rebuild and integrate machine vision.
                 <br><br>
                 Photo: <i class="caption">All Seeing Eye at Imagine RIT</i>
             </p>
-            <a class="project-btn" href="project1.html">View Project</a>
           </div>
         </div>
 
         <!--Personal Website-->
         <div id="website" class="project has-link">
-          <img src="img/projects/website-images/homepage.png" alt="" class="project-image enlargeable slideshow"/>
+          <img src="img/projects/website-images/homepage.png" alt="" class="project-image enlargeable slideshow">
           <div class="project-text">
             <h3>Personal Website</h3>
             <p>
               As stated previously, this website is designed to showcase my projects over the years. 
               The frontend is built with HTML and CSS, and the backend uses Javascript. 
-              I hope to add more detailed documentation of my projects and add more to the personal side.
+              I hope to add more detailed documentation of my projects with separate pages dedicated to each and add more personality.
               <br><br>
               Photo: <i class="caption">Homepage screenshot</i>
             </p>
             <a href="https://github.com/nat-krah/website" class="light project-link" target="_blank"><img src="img/light-github.png" alt="Github"  width="40"></a>
             <a href="https://github.com/nat-krah/website" class="dark project-link" target="_blank"><img src="img/dark-github.png" alt="Github" width="40"></a>
-            <a class="project-btn" href="project1.html">View Project</a>
           </div>
         </div>
 
         <!--VEX Over Under-->
         <div id="vex-over-under" class="project">
           <div class="project-text has-link">
-            <img src="img/projects/vex-over-under/red-leds.jpg" alt="" class="project-image enlargeable slideshow"/>
+            <img src="img/projects/vex-over-under/red-leds.jpg" alt="" class="project-image enlargeable slideshow">
             <h3>VEX Over Under</h3>
             <p>
               Robot designed and built to compete in VEX&#39;s Over Under Challenge. 
-              First iteration featured a four motor PTO, catapult, intake, sleds, and pneumatic “wings”. 
-              Second iteration featured a band assisted elevation mechanism, a raised puncher, a pneumatic blocker, an intake, sleds, and wings. 
-              I was co-lead and worked on CAD Model, Building, Coding, Notebook and was primary driver at competition.
-              Reached Semi Finals in States
-
+              I was co-lead and worked on CAD Model, Building, Coding, Notebook and was primary driver at competition. 
+              We reached the semi finals in the State Competition. 
+              The first iteration featured a four motor PTO, catapult, intake, sleds, and pneumatic “wings”. 
+              The second iteration featured a band assisted elevation mechanism, a raised puncher, a pneumatic blocker, an intake, sleds, and wings. 
               <br><br>
               Photo: <i class="caption">Showcasing robot with red LEDs</i>
             </p>
             <a class="project-link-text" href="https://docs.google.com/presentation/d/1QLLU6wRsXruq7wP_DeBp-vIeSC1auTgN/edit?usp=sharing&ouid=118344373854695580405&rtpof=true&sd=true" target="_blank">Full Documentation</a>
-            <a class="project-btn" href="project1.html">View Project</a>
           </div>
         </div>
 
         <!--Floating Wind Turbine-->
         <div id="floating-turbine" class="project">
-          <img src="img/projects/wind-turbine/windstorm.jpg" alt="" class="project-image enlargeable slideshow"/>
+          <img src="img/projects/wind-turbine/windstorm.jpg" alt="" class="project-image enlargeable slideshow">
           <div class="project-text">
             <h3>Floating Wind Turbine</h3>
             <p>
               With the increasing threat of global warming, now, more than ever, it is vital that we work to build clean, reliable energy sources. 
-              A friend and I designed a method of supporting an offshore wind turbine. 
-              It features a long cylindrical base with a massive weight on the bottom. 
-              Competed in UMaine&#39;s Windstorm Challenge.
+              UMaine has organized efforts to implore students to create new methods of supporting wind turbines for further development in the gulf of Maine. 
+              Our design features a long cylindrical base with a large weight on the bottom.
               <br><br>
               Photo: <i class="caption">Wind turbine competing at UMaine&#39;s Windstorm Challenge</i>
             </p>
-            <a class="project-btn" href="project1.html">View Project</a>
-          </div>
-        </div>
-
-        <!--Electric car-->
-        <div class="project">
-          <img src="https://placehold.co/600x400" alt="" class="project-image enlargeable"/>
-          <div class="project-text">
-            <h3>Electric Car</h3>
-            <p>
-              Tasked with designing a low power, light weight, electric car to race in Electrathon America. 
-              This was our solution, it was smaller than previous models and had consistently better handling. 
-              I worked on the backend, designing a place for the motor, batteries, ballast, and various electrical componen00003262347278ts. 
-              <br><br>
-              Photo: <i class="caption">asdasadnoasdoin</i>
-
-            </p>
-            <a class="project-btn" href="project1.html">View Project</a>
           </div>
         </div>
 
         <!--Spin Up-->
-        <div id="spin-up" class="project">
-          <img src="img/projects/vex-spin-up/disk.jpeg" alt="" class="project-image enlargeable slideshow"/>
+        <div id="vex-spin-up" class="project">
+          <img src="img/projects/vex-spin-up/disk.jpeg" alt="" class="project-image enlargeable slideshow">
           <div class="project-text has-link">
-            <h3>Spin Up</h3>
+            <h3>VEX Spin Up</h3>
             <p>
-              Robot designed to compete in VEX&#39;s Spin Up Challenge. 
-              First iteration featured ratcheting 3000 rpm 4” flywheel, top loading hopper, and intake. 
+              Robot designed to compete in VEX&#39;s Spin Up Challenge. First iteration featured ratcheting 3000 rpm 4” flywheel, top loading hopper, and intake. 
               Second iteration featured 3600 rpm 3” two stage flywheel, bottom loading hopper, intake, roller, string launcher, sleds, and custom odometry for position tracking. 
               I specialised in the intake and hopper system and string launcher. 
               <br>
@@ -266,10 +227,8 @@ About:
               Photo: <i class="caption">Robot launching disks</i>
             </p>
             <a href="https://youtu.be/c4fuzXSkvr8?t=29171" class="project-link-text" target="_blank">State Semi Finals</a>
-            <a class="project-btn" href="project1.html">View Project</a>
           </div>
         </div>
-
       </div>
 
         <!--Links at bottom of project section-->
@@ -280,9 +239,11 @@ About:
     </div>
   </section>
   
-  <section id="personal" class="section personal-post">
+  <!--Personal Section-->
+  <section id="item-list" class="section personal-post" style="display: none;">
   <div class="container">
     <h2>Personal</h2>
+
     <article class="post">
       <img src="https://placehold.co/600x400" alt="Placeholder" class="post-image">
       <div class="post-content">
@@ -292,20 +253,50 @@ About:
         </p>
       </div>
     </article>
+
+    <article class="post">
+      <img src="https://placehold.co/300x300" alt="Placeholder" class="post-image">
+      <div class="post-content">
+        <h3>Lorem ipsum dolor sit amet</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ipsa non eum quod odit, error ullam, laudantium dolorem animi soluta alias accusamus vitae. Tempore fugit ex nihil iure? Delectus hic dolore alias sit, fuga molestias nam cumque voluptatum ducimus quas consectetur repellendus molestiae officia rem modi voluptatem dolores sequi dolor laboriosam minus? Aperiam atque placeat cupiditate in eos tenetur amet odio! Rem nostrum vitae, rerum laudantium impedit ex dolor labore consequatur nihil placeat quia explicabo eum commodi, eius minus. Recusandae sint autem, quod ex aliquam, reiciendis accusamus deserunt veniam iure nulla minus suscipit rem vero tenetur tempore eveniet nesciunt harum.
+        </p>
+      </div>
+    </article>
+
+    <article class="post">
+      <img src="https://placehold.co/400x800" alt="Placeholder" class="post-image">
+      <div class="post-content">
+        <h3>Lorem ipsum dolor sit amet</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ipsa non eum quod odit, error ullam, laudantium dolorem animi soluta alias accusamus vitae. Tempore fugit ex nihil iure? Delectus hic dolore alias sit, fuga molestias nam cumque voluptatum ducimus quas consectetur repellendus molestiae officia rem modi voluptatem dolores sequi dolor laboriosam minus? Aperiam atque placeat cupiditate in eos tenetur amet odio! Rem nostrum vitae, rerum laudantium impedit ex dolor labore consequatur nihil placeat quia explicabo eum commodi, eius minus. Recusandae sint autem, quod ex aliquam, reiciendis accusamus deserunt veniam iure nulla minus suscipit rem vero tenetur tempore eveniet nesciunt harum.
+        </p>
+      </div>
+    </article>
+
+    <article class="post">
+      <img src="https://placehold.co/600x400" alt="Placeholder" class="post-image">
+      <div class="post-content">
+        <h3>Lorem ipsum dolor sit amet</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ipsa non eum quod odit, error ullam, laudantium dolorem animi soluta alias accusamus vitae. Tempore fugit ex nihil iure? Delectus hic dolore alias sit, fuga molestias nam cumque voluptatum ducimus quas consectetur repellendus molestiae officia rem modi voluptatem dolores sequi dolor laboriosam minus? Aperiam atque placeat cupiditate in eos tenetur amet odio! Rem nostrum vitae, rerum laudantium impedit ex dolor labore consequatur nihil placeat quia explicabo eum commodi, eius minus. Recusandae sint autem, quod ex aliquam, reiciendis accusamus deserunt veniam iure nulla minus suscipit rem vero tenetur tempore eveniet nesciunt harum.
+        </p>
+      </div>
+    </article>
+
+    
   </div>
-</section>
-
-
+  </section>
 
   <!--Contact section-->
-  <section id="contact" class="section">
+  <div id="contact" class="section">
     <div class="container">
       <!--Linktree-->
       <div class="social-links">
         <!--Light copies-->
         <a href="https://github.com/nat-krah" class="light" target="_blank"><img src="img/light-github.png" alt="Github" class="contactIMG" width="50"></a>
         <a href="https://www.linkedin.com/in/nat-krah/" class="light" target="_blank"><img src="img/light-linkedin.png" alt="LinkedIn" class="contactIMG" width="50"></a>
-        <a href="mailto:nicholaskrah1@gmail.com"class="light" target="_blank"><img src="img/light-mail.png" alt="Mail" class="contactIMG" width="50"></a>
+        <a href="mailto:nicholaskrah1@gmail.com" class="light" target="_blank"><img src="img/light-mail.png" alt="Mail" class="contactIMG" width="50"></a>
 
         <!--Dark copies-->
         <a href="https://github.com/nat-krah" class="dark" target="_blank"><img src="img/dark-github.png" alt="Github" class="contactIMG" width="50"></a>
@@ -313,8 +304,9 @@ About:
         <a href="mailto:nicholaskrah1@gmail.com" class="dark" target="_blank"><img src="img/dark-mail.png" alt="Mail" class="contactIMG" width="50"></a>
       </div>
     </div>
-  </section>
+  </div>
 
+  <!--Background for when images are enlarged-->
   <div id="imageOverlay">
     <img id="overlayImage" src="" alt="Enlarged view">
   </div>
