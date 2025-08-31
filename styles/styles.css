@@ -8,22 +8,22 @@
 /* Base colors with CSS variables for easy theming*/
 :root {
   --primary-color: #007acc;
-  --background-color: #121212;
-  --text-color: #ffffff;
-  --sub-text-coolor: #cccccc;
-  --section-border-color: #2a2a2a;
-  --header-bg: #1a1a1a;
-  --footer-color: #888888;
-}
-
-[data-theme="light"] {
-  --primary-color: #007acc;
   --background-color: #f9f9f9;
   --text-color: #121212;
   --sub-text-coolor: #121212;
   --section-border-color: #dcdcdc;
   --header-bg: #e0e0e0;
   --footer-color: #555555;
+}
+
+[data-theme="dark"] {
+  --primary-color: #007acc;
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --sub-text-coolor: #cccccc;
+  --section-border-color: #2a2a2a;
+  --header-bg: #1a1a1a;
+  --footer-color: #888888;
 }
 
 
@@ -376,50 +376,6 @@ nav ul li a:hover::after {
   bottom: 10px;
 }
 
-@media (max-width: 768px) {
-  #projects-list h2{
-    text-align: center;
-  }
-
-  .container{
-    width: 100%;
-  }
-
-  .item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-    position: initial;
-
-    border: none; /*Reset boarder*/
-    border-radius: 0;
-    border-bottom: 1px solid var(--primary-color)    
-  }
-
-  /*Remove border on last item*/
-  .item:last-child{
-    border: none; 
-  }
-
-  .item-image {
-    max-width: 100%;
-
-  }
-
-  .item-content{
-    position: initial;
-    justify-content: center;
-    align-items: center;
-    gap:20px;
-  }
-
-  .item-content .project-link-text{
-    position: inherit;
-
-  }
-}
-
 
 /********************************************************************************\
 *                                                                                *
@@ -717,12 +673,14 @@ input:checked + .slider:before {
 .homeBtn{
   color: var(--text-color);
   text-decoration: none;
-  font-weight: bold;  
+  font-weight: bold;
 }
 
-.homeBtn:hover{
-  color: var(--primary-color);
+.home-list{
+  display: block;
+  text-align: center;
 }
+
 
 /*snake.html*/
 .snake-section{
@@ -743,21 +701,60 @@ input:checked + .slider:before {
     max-width: calc(100vw - 4px);
 }
 
+@media (max-width: 768px) {
+  #projects-list h2{
+    text-align: center;
+  }
+
+  .container-list{
+    width: 100%;
+  }
+
+  h2{
+    text-align: center;
+  }
+
+  .about-content{
+    justify-content: center;
+    text-align: center;
+  }
+
+  .item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    border: none; /*Reset boarder*/
+    border-radius: 0;
+    border-bottom: 1px solid var(--primary-color)    
+  }
+
+  /*Remove border on last item*/
+  .item:last-child{
+    border: none; 
+  }
+
+  .item-image {
+    max-width: 100%;
+
+  }
+
+  .item-content{
+    position: initial;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+  }
+
+  .item-content .project-link-text{
+    position: inherit;
+
+  }
+}
+
 /*Shrink nav bar when screen is small*/
 @media screen and (min-width: 450px){
  nav ul li{
   font-size: 1rem;
  }
 }
-
-/*For JS Testing*/
-
-
-.fun-item{
-  display: none;
-}
-
-#imageOverlay{
-  display: none;
-}
-

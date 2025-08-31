@@ -24,21 +24,49 @@
     <link rel="stylesheet" href="../styles/styles.css">
     <script defer src="../js/script.js"></script>
 
-    <!--Load the current theme-->
-    <script>
-      (function() {
-        const savedMode = localStorage.getItem('mode') || 'dark';
-        const savedColor = localStorage.getItem('primaryColor') || '#007acc';
-        document.documentElement.setAttribute('data-theme', savedMode);
-        document.documentElement.style.setProperty('--primary-color', savedColor);
-      })();
-    </script>
-
+   
 </head>
 <body>
+  <!-- Color selector Dropdown -->
+  <div class="color-wrapper fun-item">
+    <button id="colorBtn" aria-haspopup="true" aria-expanded="false" aria-label="Color">
+      lol
+      <img id="color-selector-img" src="/img/color-wheel.png" alt="Color Wheel">
+    </button>
+    <div id="colorDropdown" class="color-dropdown" aria-label="Color menu" hidden>
+      <div class="color-section toggle-section">
+        <p>Dark Mode: </p>
+        <label class="switch" for="lightModeToggle">
+          <input type="checkbox" id="lightModeToggle" checked>
+          <span class="slider round"></span>
+        </label> 
+      </div>
+
+      <div class="color-section">
+        <p>Preset Colors:</p>
+        <div class="preset-colors">
+          <button class="color-preset" data-color="#007acc" style="background:#007acc" aria-label="Blue"></button>
+          <button class="color-preset" data-color="#ff6600" style="background:#ff6600" aria-label="Orange"></button>
+          <button class="color-preset" data-color="#00cc66" style="background:#00cc66" aria-label="Green"></button>
+          <button class="color-preset" data-color="#cc33ff" style="background:#cc33ff" aria-label="Purple"></button>
+          <button class="color-preset" data-color="#cd0c0c" style="background:#cd0c0c" aria-label="Red"></button>
+        </div>
+      </div>
+
+      <div class="color-section">
+        <label for="customColorPicker">Custom Color:</label>
+        <input type="color" id="customColorPicker">
+      </div>
+    </div>
+  </div>
+
+  <!--Link to snake game-->
+  <a id="snake-link" class="fun-item" href="sub-pages/snake.html">&#128013;</a>
+  <p id="snake-hint" class="fun-item"></p>
+
   <!--Header with nav bar-->
   <header>
-    <div class="container">
+    <div class="container container-list">
       <h1><a class="homeBtn" href="../index.html">Nat Krah</a></h1>
       <nav>
         <ul>
@@ -46,6 +74,7 @@
           <li><a href="../index.html#projects">Projects</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
           <li><a href="/assets/resume.pdf" target="_blank">Resume</a></li>
+          <li><a href="#" id="toggleFun">Fun!</a></li>
         </ul>
       </nav>
     </div>
@@ -55,12 +84,12 @@
 
   <!--Project Section-->
   <section id="projects-list" class="section">
-    <div class="container">
+    <div class="container container-list">
       <h2>Projects</h2>
 
       <!--Cubsat-->
       <div id="cubesat" class="item">
-        <img src="../img/projects/cubesat/spex-hab-space.png" alt="" class="item-image enlargeable slideshow">
+        <img src="../img/projects/cubesat/spex-hab-space.png" alt="Image from SPEX High Altitude Balloon" class="item-image enlargeable slideshow">
         <div class="item-content">
           <h3>SPEX CubeSat</h3>
           <p>
@@ -76,7 +105,7 @@
 
       <!--All Seeing Eye-->
       <div id="all-seeing-eye" class="item">
-        <img src="https://placehold.co/600x400" alt="" class="item-image enlargeable slideshow">
+        <img src="https://placehold.co/600x400" alt="All Seeing Eye at Imagine RIT" class="item-image enlargeable slideshow">
         <div class="item-content">
           <h3>All Seeing Eye</h3>
           <p>
@@ -91,7 +120,7 @@
 
       <!--Website-->
       <div id="website" class="item">
-        <img src="../img/projects/website-images/homepage.png" alt="" class="item-image enlargeable slideshow">
+        <img src="../img/projects/website-images/homepage.png" alt="Homepage screenshot" class="item-image enlargeable slideshow">
         <div class="item-content">
           <h3>Personal Website</h3>
           <p>
@@ -109,7 +138,7 @@
 
       <!--VEX Over Under-->
       <div id="vex-over-under" class="item">
-        <img src="../img/projects/vex-over-under/red-leds.jpg" alt="" class="item-image enlargeable slideshow">
+        <img src="../img/projects/vex-over-under/red-leds.jpg" alt="Showcasing robot with red LEDs" class="item-image enlargeable slideshow">
         <div class="item-content">
           <h3>Vex Over Under</h3>
           <p>
@@ -128,7 +157,7 @@
 
       <!--Floating turbine-->
       <div id="floating-turbine" class="item">
-        <img src="../img/projects/wind-turbine/windstorm.jpg" alt="" class="item-image enlargeable slideshow">
+        <img src="../img/projects/wind-turbine/windstorm.jpg" alt="Wind turbine competing at UMaine's Windstorm Challenge" class="item-image enlargeable slideshow">
         <div class="item-content">
           <h3>Floating Wind Turbine</h3>
             <p>
@@ -144,7 +173,7 @@
 
       <!--VEX Spin Up-->
       <div id="vex-spin-up" class="item">
-        <img src="../img/projects/vex-spin-up/disk.jpeg" alt="" class="item-image enlargeable slideshow">
+        <img src="../img/projects/vex-spin-up/disk.jpeg" alt="Robot launching disks" class="item-image enlargeable slideshow">
         <div class="item-content">
           <h3>VEX Spin Up</h3>
             <p>
@@ -160,6 +189,7 @@
         </div>
       </div>
     </div>
+    <p><a href="../index.html" class="homeBtn home-list">Home</a></p>
   </section>
 
   <!--Background for when images are enlarged-->

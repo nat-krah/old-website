@@ -23,19 +23,45 @@
     <!--Linking the css and js file-->
     <link rel="stylesheet" href="../styles/styles.css">
     <script defer src="../js/script.js"></script>
-
-    <!--Load the current theme-->
-    <script>
-      (function() {
-        const savedMode = localStorage.getItem('mode') || 'dark';
-        const savedColor = localStorage.getItem('primaryColor') || '#007acc';
-        document.documentElement.setAttribute('data-theme', savedMode);
-        document.documentElement.style.setProperty('--primary-color', savedColor);
-      })();
-    </script>
-
 </head>
 <body>
+  <!-- Color selector Dropdown -->
+  <div class="color-wrapper fun-item">
+    <button id="colorBtn" aria-haspopup="true" aria-expanded="false" aria-label="Color">
+      lol
+      <img id="color-selector-img" src="/img/color-wheel.png" alt="Color Wheel">
+    </button>
+    <div id="colorDropdown" class="color-dropdown" aria-label="Color menu" hidden>
+      <div class="color-section toggle-section">
+        <p>Dark Mode: </p>
+        <label class="switch" for="lightModeToggle">
+          <input type="checkbox" id="lightModeToggle" checked>
+          <span class="slider round"></span>
+        </label> 
+      </div>
+
+      <div class="color-section">
+        <p>Preset Colors:</p>
+        <div class="preset-colors">
+          <button class="color-preset" data-color="#007acc" style="background:#007acc" aria-label="Blue"></button>
+          <button class="color-preset" data-color="#ff6600" style="background:#ff6600" aria-label="Orange"></button>
+          <button class="color-preset" data-color="#00cc66" style="background:#00cc66" aria-label="Green"></button>
+          <button class="color-preset" data-color="#cc33ff" style="background:#cc33ff" aria-label="Purple"></button>
+          <button class="color-preset" data-color="#cd0c0c" style="background:#cd0c0c" aria-label="Red"></button>
+        </div>
+      </div>
+
+      <div class="color-section">
+        <label for="customColorPicker">Custom Color:</label>
+        <input type="color" id="customColorPicker">
+      </div>
+    </div>
+  </div>
+
+  <!--Link to snake game-->
+  <a id="snake-link" class="fun-item" href="sub-pages/snake.html">&#128013;</a>
+  <p id="snake-hint" class="fun-item"></p>
+
   <!--Header with nav bar-->
   <header>
     <div class="container">
@@ -46,6 +72,7 @@
           <li><a href="../index.html#projects">Projects</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
           <li><a href="/assets/resume.pdf" target="_blank">Resume</a></li>
+          <li><a href="#" id="toggleFun">Fun!</a></li>
         </ul>
       </nav>
     </div>
@@ -58,7 +85,7 @@
 
       <!--Snake in Unix Terminal-->
       <div id="snake" class="item">
-        <img src="../img/mini-projects/snake/intro-sequence.png" alt="" class="item-image enlargeable slideshow">
+        <img src="../img/mini-projects/snake/intro-sequence.png" alt="Intro Sequence" class="item-image enlargeable slideshow">
         <div class="item-content">
           <h3>Snake in Terminal</h3>
           <p>
@@ -75,7 +102,7 @@
 
       <!--Arch linux-->
       <div id="arch-linux" class="item">
-        <img src="../img/mini-projects/arch-linux/fastfetch.png" alt="" class="item-image enlargeable slideshow">
+        <img src="../img/mini-projects/arch-linux/fastfetch.png" alt="Basic Fastfetch showing Arch logo and laptop specs" class="item-image enlargeable slideshow">
         <div class="item-content">
           <h3>Arch Linux</h3>
           <p>
@@ -89,7 +116,7 @@
 
       <!--Lunar Lander-->
       <div id="lunar-lander" class="item">
-        <img src="../img/mini-projects/lunar-lander/playing.png" alt="" class="item-image enlargeable slideshow">
+        <img src="../img/mini-projects/lunar-lander/playing.png" alt="Game being played" class="item-image enlargeable slideshow">
         <div class="item-content">
           <h3>Lunar Lander (MECE 117)</h3>
           <p>
@@ -105,7 +132,7 @@
 
       <!--Chime Machine-->
       <div id="chime-machine" class="item">
-        <img src="../img/mini-projects/chime-machine/final-chime.JPG" alt="" class="item-image enlargeable slideshow">
+        <img src="../img/mini-projects/chime-machine/final-chime.JPG" alt="Final Chime Machine" class="item-image enlargeable slideshow">
         <div class="item-content">
           <h3>Chime Machine (MECE 104)</h3>
           <p>
@@ -121,7 +148,7 @@
 
        <!--Sandy Beach Cleanup-->
       <div id="beach-cleanup" class="item">
-        <img src="../img/mini-projects/sandy/fronISO.png" alt="" class="item-image enlargeable slideshow">
+        <img src="../img/mini-projects/sandy/fronISO.png" alt="CAD view 1" class="item-image enlargeable slideshow">
         <div class="item-content">
           <h3>Sandy the Beach Cleanup Robot</h3>
           <p>
@@ -135,6 +162,7 @@
         </div>
       </div>
     </div>
+    <p><a href="../index.html" class="homeBtn home-list">Home</a></p>
   </section>
 
   <!--Background for when images are enlarged-->

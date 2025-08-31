@@ -1,22 +1,20 @@
 <!--
 To Do
 
-Snake
-- Rewrite code tbh
-- fix colision bug
-- Make it work on small screen
-- Make snake stop at some point and display a click me! text bubble
+Snake.
 
-make images .webp
+make images .webp maybe
 
-add alt for all photos
+update website images with new images
 
-update images with new images
+Profesounal photo
 
-make sure project section matches project-list
+fix highlights on homeBtn 
 
-About:
-- Actual professional photo
+new faveicon
+
+add https
+fix domain stuffs in general
 -->
 
 
@@ -45,16 +43,6 @@ About:
     <!--Linking the css and js file-->
     <link rel="stylesheet" href="styles/styles.css">
     <script defer src="js/script.js"></script>
-
-    <!--Load the current theme-->
-    <script>
-      (function() {
-        const savedMode = localStorage.getItem('mode') || 'dark';
-        const savedColor = localStorage.getItem('primaryColor') || '#007acc';
-        document.documentElement.setAttribute('data-theme', savedMode);
-        document.documentElement.style.setProperty('--primary-color', savedColor);
-      })();
-    </script>
 </head>
   <body>
 
@@ -116,7 +104,7 @@ About:
     <div class="container">
       <h2>About</h2>
       <div class="about-content">
-        <img src="img/mai nPhoto.JPG" class="enlargeable" alt="Nat Krah" id="about-image" width="300">
+        <img src="img/mainPhoto.JPG" class="enlargeable" alt="Nat Krah" id="about-image" width="300">
         <p class="about-text">
           Hi! <br> I'm Nat, a second year at RIT studying mechanical, aerospace, and computer engineering. For as long as I can remember I've loved putting things together.
           From simple legos in Elementery school to speocalizing in designing complex parts for a non-uniform robotic arm.         
@@ -134,7 +122,7 @@ About:
         
         <!--Cubesat-->
         <div id="cubesat" class="project">
-          <img src="img/projects/cubesat/spex-hab-space.png" alt="" class="project-image enlargeable slideshow">
+          <img src="img/projects/cubesat/spex-hab-space.png" alt="Image from SPEX High Altitude Balloon" class="project-image enlargeable slideshow">
           <div class="project-text">
             <h3>SPEX CubeSat</h3>
             <p>
@@ -150,7 +138,7 @@ About:
 
         <!--All Seeing Eye-->
         <div id="all-seeing-eye" class="project">
-          <img src="https://placehold.co/600x400" alt="" class="project-image enlargeable slideshow">
+          <img src="https://placehold.co/600x400" alt="All Seeing Eye at Imagine RIT" class="project-image enlargeable slideshow">
           <div class="project-text">
             <h3>All Seeing Eye</h3>
             <p>
@@ -165,7 +153,7 @@ About:
 
         <!--Personal Website-->
         <div id="website" class="project has-link">
-          <img src="img/projects/website-images/homepage.png" alt="" class="project-image enlargeable slideshow">
+          <img src="img/projects/website-images/homepage.png" alt="Homepage screenshot" class="project-image enlargeable slideshow">
           <div class="project-text">
             <h3>Personal Website</h3>
             <p>
@@ -183,7 +171,7 @@ About:
         <!--VEX Over Under-->
         <div id="vex-over-under" class="project">
           <div class="project-text has-link">
-            <img src="img/projects/vex-over-under/red-leds.jpg" alt="" class="project-image enlargeable slideshow">
+            <img src="img/projects/vex-over-under/red-leds.jpg" alt="Showcasing robot with red LEDs" class="project-image enlargeable slideshow">
             <h3>VEX Over Under</h3>
             <p>
               Robot designed and built to compete in VEX&#39;s Over Under Challenge. 
@@ -200,7 +188,7 @@ About:
 
         <!--Floating Wind Turbine-->
         <div id="floating-turbine" class="project">
-          <img src="img/projects/wind-turbine/windstorm.jpg" alt="" class="project-image enlargeable slideshow">
+          <img src="img/projects/wind-turbine/windstorm.jpg" alt="Wind turbine competing at UMaine's Windstorm Challenge" class="project-image enlargeable slideshow">
           <div class="project-text">
             <h3>Floating Wind Turbine</h3>
             <p>
@@ -215,7 +203,7 @@ About:
 
         <!--Spin Up-->
         <div id="vex-spin-up" class="project">
-          <img src="img/projects/vex-spin-up/disk.jpeg" alt="" class="project-image enlargeable slideshow">
+          <img src="img/projects/vex-spin-up/disk.jpeg" alt="Robot launching disks" class="project-image enlargeable slideshow">
           <div class="project-text has-link">
             <h3>VEX Spin Up</h3>
             <p>

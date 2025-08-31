@@ -1,7 +1,7 @@
 //Wait until DOM is loaded
-
-//Specific to index.html
 document.addEventListener('DOMContentLoaded', () => {
+    let path = window.location.pathname;
+
     // =============================
     // Fun Mode Toggle
     // =============================
@@ -25,19 +25,31 @@ document.addEventListener('DOMContentLoaded', () => {
     text: "While projects are a lot of fun and a huge proponent in my life, they are not everything. I made this section to add a little personality to the website and showcase some of the stuff I do outside of strict engineering. Feel free to look around, explore. You might find something cool or unexpected."
     };
 
+    //Hide fun items and show noFun items by default
+    funItems.forEach(item => item.style.display = 'none');
+    noFun.forEach(item => item.style.display = 'flex');
+
     toggleFunBtn.addEventListener('click', function(e) {
         if (funToggled) {
             funItems.forEach(item => item.style.display = 'flex');
             noFun.forEach(item => item.style.display = 'none');
-            scrambleText(aboutHeader, funAbout.title);
-            scrambleText(aboutText, funAbout.text);
+
+            //Only change the about section if we are in index.html
+            if (path === "/index.html"){
+                scrambleText(aboutHeader, funAbout.title);
+                scrambleText(aboutText, funAbout.text);
+            }
 
             funToggled = false;
         } else {
             funItems.forEach(item => item.style.display = 'none');
             noFun.forEach(item => item.style.display = 'flex');
-            scrambleText(aboutHeader, defaultAbout.title);
-            scrambleText(aboutText, defaultAbout.text);
+            
+            //Only change the about section if we are in index.html
+            if (path === "/indx.html"){
+                scrambleText(aboutHeader, defaultAbout.title);
+                scrambleText(aboutText, defaultAbout.text);
+            }
 
             funToggled = true;
         }
@@ -107,11 +119,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Show/hide light/dark elems
         if (mode === 'light') {
-        lightElems.forEach(el => el.style.display = 'block');
-        darkElems.forEach(el => el.style.display = 'none');
+            lightElems.forEach(el => el.style.display = 'block');
+            darkElems.forEach(el => el.style.display = 'none');
         } else {
-        darkElems.forEach(el => el.style.display = 'block');
-        lightElems.forEach(el => el.style.display = 'none');
+            darkElems.forEach(el => el.style.display = 'block');
+            lightElems.forEach(el => el.style.display = 'none');
         }
     }
 
@@ -145,10 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, 30);
     }
-});
 
-//For all pages
-document.addEventListener('DOMContentLoaded', () => {
     // =============================
     // SLIDESHOWS
     // =============================
@@ -333,6 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Next index
             index = (index + 1) % slideshow.images.length;
             img.src = slideshow.images[index];
+            img.alt = slideshow.captions[index];
             imageIndexes[slideshow.id] = index;
 
             // Scramble caption
