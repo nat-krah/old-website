@@ -1,6 +1,18 @@
 //Wait until DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     let path = window.location.pathname;
+    
+    //Change faveicon based on perfered color mode
+    const faveicon = document.getElementById('faveicon');
+    if (window.matchMedia) {
+        // Check if the dark-mode Media-Query matches
+        if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+            faveicon.setAttribute('href','../img/dark-faveicon.png');
+        } else {
+            faveicon.setAttribute('href','../img/light-faveicon.png');
+        }
+    }
+
 
     // =============================
     // Fun Mode Toggle
@@ -46,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             noFun.forEach(item => item.style.display = 'flex');
             
             //Only change the about section if we are in index.html
-            if (path === "/indx.html"){
+            if (path === "/index.html"){
                 scrambleText(aboutHeader, defaultAbout.title);
                 scrambleText(aboutText, defaultAbout.text);
             }
@@ -72,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedColor = localStorage.getItem('primaryColor');
     applyColor(savedMode, savedColor); //Apply color on page laod
 
-    
     // Toggle dropdown
     colorBtn.addEventListener('click', () => {
         const expanded = colorBtn.getAttribute('aria-expanded') === 'true';
@@ -407,9 +418,6 @@ document.addEventListener('DOMContentLoaded', () => {
         overlayImage.src = '';
         document.body.style.overflow = '';
     }
-
-   
-
 
 
     // =============================

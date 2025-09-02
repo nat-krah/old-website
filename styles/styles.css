@@ -676,6 +676,10 @@ input:checked + .slider:before {
   font-weight: bold;
 }
 
+.homeBtn:hover{
+  color: var(--primary-color);
+}
+
 .home-list{
   display: block;
   text-align: center;
@@ -693,13 +697,18 @@ input:checked + .slider:before {
     height: 100vh;
 }
 
-#snakeGame {
-    background-color: #111;
-    border: 2px solid var(--primary-color);
-    display: block;
-    margin: 1rem auto;
-    max-width: calc(100vw - 4px);
+#snake-game{
+  border: 3px solid var(--primary-color);
+  max-width: calc(100vw - 4px);
 }
+
+#snake-home{
+  margin:20px;
+}
+
+
+
+
 
 @media (max-width: 768px) {
   #projects-list h2{

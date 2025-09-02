@@ -18,13 +18,12 @@
     <title>Nat Krah | Snake</title>
 
     <!--Add an cool icon-->
-    <link rel="icon" href="img/faveicon.png" type="image/x.icon">
+    <link rel="icon" href="../img/faveicon.png" type="image/x.icon">
 
     <!--Linking the css and js file-->
     <link rel="stylesheet" href="../styles/styles.css">
     <script defer src="../js/snake.js"></script>
 
-<!--Load the current theme-->
     <script>
       (function() {
         const savedMode = localStorage.getItem('mode') || 'dark';
@@ -36,10 +35,11 @@
 
 </head>
 <body>
-    <section class="snake-section">
-        <h1> <span class="nowrap">Take a Break:</span> <span class="nowrap"> Play Some Snake</span></h1>
-        <canvas id="snakeGame" width="600" height="600"></canvas>
-        <p><a href="../index.html" class="homeBtn">Home</a></p>
-    </section>
+    <div id="snake" class="container snake-section">
+        <h2>Snake Game</h2>
+        <p id="score">Score: 0 | Speed: 50</p>
+        <canvas id="snake-game" width="400" height="400"></canvas> 
+        <p><a href="../index.html" class="homeBtn home-list" id="snake-home">Home</a></p>
+    </div>
 </body>
 </html>
