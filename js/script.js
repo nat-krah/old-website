@@ -192,14 +192,12 @@ document.addEventListener('DOMContentLoaded', () => {
         {
         id: 'all-seeing-eye',
         images: [
-            'https://placehold.co/400x400',
+            '../img/projects/all-seeing-eye/old-eye.JPG',
             '../img/projects/all-seeing-eye/test-eye.JPG',
-            '../img/projects/all-seeing-eye/old-eye.JPG'
         ],
         captions: [
-            "All Seeing Eye at Imagine RIT",
+            "All Seeing Eye",
             "Testing new core",
-            "Old version of the tentical"
         ]
         },
         {
