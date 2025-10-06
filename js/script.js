@@ -122,19 +122,21 @@ document.addEventListener('DOMContentLoaded', () => {
         applyColor(localStorage.getItem('mode') || 'dark', color);
     });
 
+    console.log(savedMode);
+
     function applyColor(mode, color) {
         document.documentElement.setAttribute('data-theme', mode);
         document.documentElement.style.setProperty('--primary-color', color);
         lightModeToggle.checked = (mode === 'dark');
         customColorPicker.value = color;
-
+        
         // Show/hide light/dark elems
         if (mode === 'light') {
-            lightElems.forEach(el => el.style.display = 'block');
-            darkElems.forEach(el => el.style.display = 'none');
-        } else {
-            darkElems.forEach(el => el.style.display = 'block');
             lightElems.forEach(el => el.style.display = 'none');
+            darkElems.forEach(el => el.style.display = 'block');
+        } else {
+            darkElems.forEach(el => el.style.display = 'none');
+            lightElems.forEach(el => el.style.display = 'block');
         }
     }
 
