@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         captions: [
             "Homepage Screenshot",
-            "Snake game I coded in js",
+            "Snake game I coded in JavaScript",
             "Website code"
         ]
         },
