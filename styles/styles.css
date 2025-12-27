@@ -329,34 +329,49 @@ nav ul li a:hover::after {
 *                                                                                *
 \********************************************************************************/
 
-.item-list-post{
-  display: flex;
-}
+/*
+Essentally whats going on is that the image size is not being prioritized
+and so when the photo shrinks, the image gets compressed
+Which makes it look real funny
+I need to have it prioritize the image and have the text get like wraped around it
+I think instead of having them as two seperate things the text and the image should
+become one thing
+These changes should not mess w/ how this looks on a smaller screen
+Cause I like how that looks
+*/
+
+
 
 .item {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
   gap: 15px;
   padding:15px;
-
   margin-top: 30px;
 
-  border: 2px solid var(--primary-color);
-  border-left: 5px solid var(--primary-color);
-  border-radius: 10px;
-
   position: relative;
+
+  border: none; /*Reset boarder*/
+  border-radius: 0;
+  border-bottom: 1px solid var(--primary-color);  
 }
 
 .item-image {
   flex: 1 1 250px;
-  max-width: 300px;
+  max-width: 50%;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .item-content {
-  flex: 2 1 400px;
+  position: initial;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
 }
 
 .item-content h3 {

@@ -79,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightElems = document.querySelectorAll('.dark');
     const darkElems = document.querySelectorAll('.light');
 
-
     const savedMode = localStorage.getItem('mode');
     const savedColor = localStorage.getItem('primaryColor');
     applyColor(savedMode, savedColor); //Apply color on page laod
@@ -122,8 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
         applyColor(localStorage.getItem('mode') || 'dark', color);
     });
 
-    console.log(savedMode);
-
     function applyColor(mode, color) {
         document.documentElement.setAttribute('data-theme', mode);
         document.documentElement.style.setProperty('--primary-color', color);
@@ -132,11 +129,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Show/hide light/dark elems
         if (mode === 'light') {
-            lightElems.forEach(el => el.style.display = 'none');
-            darkElems.forEach(el => el.style.display = 'block');
-        } else {
-            darkElems.forEach(el => el.style.display = 'none');
             lightElems.forEach(el => el.style.display = 'block');
+            darkElems.forEach(el => el.style.display = 'none');
+        } else {
+            darkElems.forEach(el => el.style.display = 'block');
+            lightElems.forEach(el => el.style.display = 'none');
         }
     }
 
@@ -194,12 +191,14 @@ document.addEventListener('DOMContentLoaded', () => {
         {
         id: 'all-seeing-eye',
         images: [
-            '../img/projects/all-seeing-eye/old-eye.JPG',
+            '../img/projects/all-seeing-eye/current-eye.png',
             '../img/projects/all-seeing-eye/test-eye.JPG',
+            '../img/projects/all-seeing-eye/old-eye.JPG'
         ],
         captions: [
-            "All Seeing Eye",
+            "All Seeing Eye At Maker Fair",
             "Testing new core",
+            "Old All Seeing Eye"
         ]
         },
         {
@@ -260,6 +259,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         {
+        id: 'balista',
+        images: [
+            '../img/mini-projects/balista/balista2.png',
+            '../img/mini-projects/balista/balista1.png', 
+            '../img/mini-projects/balista/engineeringDrawing.png'
+        ],
+        captions: [
+            "Second iteration of the Balista",
+            "First iteration of the Balista",
+            "Assembly drawing"
+        ]
+        },
+        {
         id: 'snake',
         images: [
             '../img/mini-projects/snake/intro-sequence.png',
@@ -286,8 +298,8 @@ document.addEventListener('DOMContentLoaded', () => {
             '../img/mini-projects/lunar-lander/landed.png'
         ],
         captions: [
-            "Basic Fastfetch showing Arch logo and laptop specs",
-            "Hyprland desktop"
+            "Gameplay",
+            "Landed Screen"
         ]
         },{
         id: 'chime-machine',
