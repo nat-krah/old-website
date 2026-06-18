@@ -1,67 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Set font type and viewpoint-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- keywords used when searching for website-->
-    <meta name="keywords" content="personal website">
+  <!-- Set font type and viewpoint-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- keywords used when searching for website-->
+  <meta name="keywords" content="personal website">
 
-    <!-- Description of website (when searched for on search engine)-->
-    <meta name="description" content="Nat Krah personal website">
+  <!-- Description of website (when searched for on search engine)-->
+  <meta name="description" content="Nat Krah personal website">
 
-    <!--Author of code-->
-    <meta name="--Author" content="Nat Krah">
+  <!--Author of code-->
+  <meta name="--Author" content="Nat Krah">
 
-    <!-- Title of the website-->
-    <title>Nat Krah | Mini Projects</title>
+  <!-- Title of the website-->
+  <title>Nat Krah | Mini Projects</title>
 
-    <!--Add an cool icon-->
-    <link id="faveicon" rel="icon" href="img/light-faveicon.png" type="image/x.icon">
+  <!--Add an cool icon-->
+  <link id="faveicon" rel="icon" href="img/light-faveicon.png" type="image/x.icon">
 
-    <!--Linking the css and js file-->
-    <link rel="stylesheet" href="../styles/styles.css">
-    <script defer src="../js/script.js"></script>
+  <!--Linking the css and js file-->
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../script.js"></script>
 </head>
 <body>
-  <!-- Color selector Dropdown -->
-  <div class="color-wrapper fun-item">
-    <button id="colorBtn" aria-haspopup="true" aria-expanded="false" aria-label="Color">
-      lol
-      <img id="color-selector-img" src="/img/color-wheel.png" alt="Color Wheel">
-    </button>
-    <div id="colorDropdown" class="color-dropdown" aria-label="Color menu" hidden>
-      <div class="color-section toggle-section">
-        <p>Dark Mode: </p>
-        <label class="switch" for="lightModeToggle">
-          <input type="checkbox" id="lightModeToggle" checked>
-          <span class="slider round"></span>
-        </label> 
-      </div>
-
-      <div class="color-section">
-        <p>Preset Colors:</p>
-        <div class="preset-colors">
-          <button class="color-preset" data-color="#007acc" style="background:#007acc" aria-label="Blue"></button>
-          <button class="color-preset" data-color="#ff6600" style="background:#ff6600" aria-label="Orange"></button>
-          <button class="color-preset" data-color="#00cc66" style="background:#00cc66" aria-label="Green"></button>
-          <button class="color-preset" data-color="#cc33ff" style="background:#cc33ff" aria-label="Purple"></button>
-          <button class="color-preset" data-color="#cd0c0c" style="background:#cd0c0c" aria-label="Red"></button>
-        </div>
-      </div>
-
-      <div class="color-section">
-        <label for="customColorPicker">Custom Color:</label>
-        <input type="color" id="customColorPicker">
-      </div>
-    </div>
-  </div>
-
-  <!--Link to snake game-->
-  <a id="snake-link" class="fun-item" href="sub-pages/snake.html">&#128013;</a>
-  <p id="snake-hint" class="fun-item"></p>
-
   <!--Header with nav bar-->
   <header>
     <div class="container">
@@ -73,7 +36,6 @@
           <li><a href="project-mini.html" style="white-space: nowrap;">Mini-Projects</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
           <li><a href="/assets/resume.pdf" target="_blank">Resume</a></li>
-          <li><a href="#" id="toggleFun">Fun!</a></li>
         </ul>
       </nav>
     </div>
@@ -82,7 +44,7 @@
   <!--Project Section-->
   <section id="projects-list" class="section">
     <div class="container">
-      <h2>Mini Projects</h2>
+      <h2 class="center">Mini Projects</h2>
 
       <!--Balista-->
       <div id="balista" class="item">
@@ -116,14 +78,12 @@
           <p>
             As part of an effort to learn more c++ and to get more confortable using Unix Terminals, I decided to code the game snake from the ground up. 
             I used limited resources, only looked at ansi escape codes, terminal flags, and c++ documentation. 
-            Basic code was ported over to JavaScript and can be played <a href="snake.html" style="text-decoration: underline;">here</a>.
             <br><br>
             Photo 1&rpar; Intro Sequence
             <br>
             Photo 2&rpar; Gameplay
           </p>
           <a href="https://github.com/nat-krah/snake-cpp" class="dark project-link" target="_blank"><img src="../img/dark-github.png" alt="Github" width="40"></a>
-          <a href="https://github.com/nat-krah/snake-cpp" class="light project-link" target="_blank"><img src="../img/light-github.png" alt="Github"  width="40"></a>
         </div>
       </div>
 
@@ -158,7 +118,6 @@
             Photo 2&rpar; Landed Screen
           </p>
           <a href="https://github.com/nat-krah/lunar-lander" class="dark project-link" target="_blank"><img src="../img/dark-github.png" alt="Github" width="40"></a>
-          <a href="https://github.com/nat-krah/lunar-lander" class="light project-link" target="_blank"><img src="../img/light-github.png" alt="Github"  width="40"></a>
         </div>
       </div>
 
@@ -186,9 +145,7 @@
         <div class="item-content">
           <h3>Sandy the Beach Cleanup Robot</h3>
           <p>
-            A challenge issued by Onshape challenged applicants to use vex materials to design a robot that would help the environment. 
-            My robotics team and I decided to tackle ocean trash with a beach cleanup robot. It would sift large sections of the sand and deposit any trash into a removable bin. 
-            I worked on the sifter and trash bin. 
+            Challenged with designing a robot to help the environment using COTS and vex materials. My robotics team and I decided to focus on beach trash. Beach cleanliness significantly impacts local wildlife and can introduce large quantities of trash into the oceans. I focused on designing the sifting mechanism and the removable trash bin
             <br><br>
             Photo 1&rpar; CAD view 1
             <br>

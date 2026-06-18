@@ -1,76 +1,31 @@
-<!--
-To Do
-
-Add more to fun! section
-
-new faveicon - should be fixed, need to test
--->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Set font type and viewpoint-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- keywords used when searching for website-->
-    <meta name="keywords" content="personal website">
+  <!-- Set font type and viewpoint-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- keywords used when searching for website-->
+  <meta name="keywords" content="personal website">
 
-    <!-- Description of website (when searched for on search engine)-->
-    <meta name="description" content="Personal website built by Nat Krah to showcase projects">
+  <!-- Description of website (when searched for on search engine)-->
+  <meta name="description" content="Personal website built by Nat Krah to showcase projects">
 
-    <!--Author of code-->
-    <meta name="--Author" content="Nat Krah">
+  <!--Author of code-->
+  <meta name="Author" content="Nat Krah">
 
-    <!-- Title of the website-->
-    <title>Nat Krah</title>
+  <!-- Title of the website-->
+  <title>Nat Krah</title>
 
-    <!--Add an faveicon-->
-    <link id="faveicon" rel="icon" href="img/light-faveicon.png" type="image/x.icon">
+  <!--Add an faveicon-->
+  <link id="faveicon" rel="icon" href="img/light-faveicon.png" type="image/x.icon">
 
-    <!--Linking the css and js file-->
-    <link rel="stylesheet" href="styles/styles.css">
-    <script defer src="js/script.js"></script>
+  <!--Linking the css and js file-->
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
-  <body>
 
-  <!-- Color selector Dropdown -->
-  <div class="color-wrapper fun-item">
-    <button id="colorBtn" aria-haspopup="true" aria-expanded="false" aria-label="Color">
-      lol
-      <img id="color-selector-img" src="/img/color-wheel.png" alt="Color Wheel">
-    </button>
-    <div id="colorDropdown" class="color-dropdown" aria-label="Color menu" hidden>
-      <div class="color-section toggle-section">
-        <p>Dark Mode: </p>
-        <label class="switch" for="lightModeToggle">
-          <input type="checkbox" id="lightModeToggle" checked>
-          <span class="slider round"></span>
-        </label> 
-      </div>
-
-      <div class="color-section">
-        <p>Preset Colors:</p>
-        <div class="preset-colors">
-          <button class="color-preset" data-color="#007acc" style="background:#007acc" aria-label="Blue"></button>
-          <button class="color-preset" data-color="#ff6600" style="background:#ff6600" aria-label="Orange"></button>
-          <button class="color-preset" data-color="#00cc66" style="background:#00cc66" aria-label="Green"></button>
-          <button class="color-preset" data-color="#cc33ff" style="background:#cc33ff" aria-label="Purple"></button>
-          <button class="color-preset" data-color="#cd0c0c" style="background:#cd0c0c" aria-label="Red"></button>
-        </div>
-      </div>
-
-      <div class="color-section">
-        <label for="customColorPicker">Custom Color:</label>
-        <input type="color" id="customColorPicker">
-      </div>
-    </div>
-  </div>
-
-  <!--Link to snake game-->
-  <a id="snake-link" class="fun-item" href="sub-pages/snake.html">&#128013;</a>
-  <p id="snake-hint" class="fun-item"></p>
+<body>
 
   <!--Header with nav bar-->
   <header>
@@ -83,7 +38,6 @@ new faveicon - should be fixed, need to test
           <li><a href="/sub-pages/project-mini.html" style="white-space: nowrap;">Mini-Projects</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="/assets/resume.pdf" target="_blank">Resume</a></li>
-          <li><a href="#" id="toggleFun">Fun!</a></li>
         </ul>
       </nav>
     </div>
@@ -97,7 +51,7 @@ new faveicon - should be fixed, need to test
         <img src="img/mainPhoto.JPG" class="enlargeable" alt="Nat Krah" id="about-image" width="300">
         <p class="about-text">
           Hi! <br> I'm Nat, a second year at RIT studying mechanical, aerospace, and computer engineering. For as long as I can remember I've loved putting things together.
-          From simple legos in Elementery school to specializing in designing complex parts for a non-uniform robotic arm.         
+          From simple legos in Elementery school to specializing in designing complex parts softbody robotic tentacle.         
           My life has been a series of projects, and this website is an attempt to document their highlights.
           <br>
           Hover a section to cycle through photos!
@@ -114,14 +68,13 @@ new faveicon - should be fixed, need to test
         
         <!--Cubesat-->
         <div id="cubesat" class="project">
-          <img src="img/projects/cubesat/spex-hab-space.png" alt="Image from SPEX High Altitude Balloon" class="project-image enlargeable slideshow">
+          <img src="img/projects/cubesat/cubesat-at-imagine.jpg" class="project-image enlargeable slideshow">
           <div class="project-text">
             <h3>SPEX CubeSat</h3>
             <p>
-              In Cubesat we are exploring different radiation deflection/diversion methods in the hope of finding a lighter and cheaper way to protect electric components for satellites. 
-              We are working on a small 1U cubesat with several radiation sensors. Our goal is to get collect baseline data and prove mission success before expanding to a full research satellite. 
-              Additionally, we are constructing several High Altitude Balloons (HABs) for individual component testing and practice assembly. 
-              I am working as Payload Lead organizing efforts to design radiation detectors to integrate with the larger 1U cubesat. 
+              In Cubesat we were exploring radiation deflection methods in search of lighter and cheaper ways to protect electric components and astronauts. We were working on the design and construction of a small 1U Cubesat with several radiation sensors to prove mission success and get baseline data before expanding to a full research satellite. I served as payload lead organizing efforts to design custom radiation detectors that would integrate within the Cubesat. 
+              <br><br>
+              As payload lead I made sure we were on-pace with the larger team. With little experience working with PCB design and radiation, I taught myself KiCad, elementary circuits, and the core concepts of radiation physics. Using this knowledge I trained my peers.
               <br><br>
               Photo: <i class="caption">Image from SPEX High Altitude Balloon</i>
             </p>
@@ -134,11 +87,11 @@ new faveicon - should be fixed, need to test
           <div class="project-text">
             <h3>All Seeing Eye</h3>
             <p>
-                The "All Seeing Eye" is a robotic tentacle that moves in complex patterns and will use machine vision to track peoples faces. 
-                While working on the Mechanical team we redesigned and rebuilt the entire arm and power system to reduce strain on the stepper motors and core. 
-                This coming semester I will be working as co-lead and focsing on finishing the rebuild and integrate machine vision.
-                <br><br>
-                Photo: <i class="caption">All Seeing Eye</i>
+              The “All Seeing Eye” is a softbody robotics tentacle that uses computer vision to track and trace people as they pass. 
+              While working on the Mechanical team we redesigned and rebuilt the entire arm and power system to reduce strain on the stepper motors and core. 
+              This coming semester I will be working as co-lead and focsing on finishing the rebuilding the tentacle structure and integrate machine vision.
+              <br><br>
+              Photo: <i class="caption">All Seeing Eye At Maker Fair</i>
             </p>
           </div>
         </div>
@@ -155,8 +108,7 @@ new faveicon - should be fixed, need to test
               <br><br>
               Photo: <i class="caption">Homepage screenshot</i>
             </p>
-            <a href="https://github.com/nat-krah/website" class="dark project-link" target="_blank"><img src="img/dark-github.png" alt="Github" width="40"></a>
-            <a href="https://github.com/nat-krah/website" class="light project-link" target="_blank"><img src="img/light-github.png" alt="Github"  width="40"></a>
+            <a href="https://github.com/nat-krah/old-website" class="dark project-link" target="_blank"><img src="img/dark-github.png" alt="Github" width="40"></a>
           </div>
         </div>
 
@@ -184,9 +136,9 @@ new faveicon - should be fixed, need to test
           <div class="project-text">
             <h3>Floating Wind Turbine</h3>
             <p>
-              With the increasing threat of global warming, now, more than ever, it is vital that we work to build clean, reliable energy sources. 
-              UMaine had organized efforts to asked Maine students to design new methods of supporting wind turbines for further development in the gulf of Maine. 
-              Our design features a long cylindrical base with a large weight on the bottom.
+              After passing several key climate change tipping points, now, more than ever, it is vital that we work to build clean and reliable energy sources. UMaine has organized efforts to implore students to create new methods of supporting wind turbines for further development in the gulf of Maine.
+              <br><br>
+              A group of friends and I decided to compete in UMaine's competition. We designed a spar styled wind turbine base. My work focused on creating several prototypes and learning hydrostatic fluid to find the optimal height, width, to weight ratio for maximum stability. 
               <br><br>
               Photo: <i class="caption">Wind turbine competing at UMaine&#39;s Windstorm Challenge</i>
             </p>
@@ -219,54 +171,6 @@ new faveicon - should be fixed, need to test
     </div>
   </section>
   
-  <!--Personal Section-->
-  <section id="item-list" class="section personal-post" style="display: none;">
-  <div class="container">
-    <h2>Personal</h2>
-
-    <article class="post">
-      <img src="https://placehold.co/600x400" alt="Placeholder" class="post-image">
-      <div class="post-content">
-        <h3>Lorem ipsum dolor sit amet</h3>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ipsa non eum quod odit, error ullam, laudantium dolorem animi soluta alias accusamus vitae. Tempore fugit ex nihil iure? Delectus hic dolore alias sit, fuga molestias nam cumque voluptatum ducimus quas consectetur repellendus molestiae officia rem modi voluptatem dolores sequi dolor laboriosam minus? Aperiam atque placeat cupiditate in eos tenetur amet odio! Rem nostrum vitae, rerum laudantium impedit ex dolor labore consequatur nihil placeat quia explicabo eum commodi, eius minus. Recusandae sint autem, quod ex aliquam, reiciendis accusamus deserunt veniam iure nulla minus suscipit rem vero tenetur tempore eveniet nesciunt harum.
-        </p>
-      </div>
-    </article>
-
-    <article class="post">
-      <img src="https://placehold.co/300x300" alt="Placeholder" class="post-image">
-      <div class="post-content">
-        <h3>Lorem ipsum dolor sit amet</h3>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ipsa non eum quod odit, error ullam, laudantium dolorem animi soluta alias accusamus vitae. Tempore fugit ex nihil iure? Delectus hic dolore alias sit, fuga molestias nam cumque voluptatum ducimus quas consectetur repellendus molestiae officia rem modi voluptatem dolores sequi dolor laboriosam minus? Aperiam atque placeat cupiditate in eos tenetur amet odio! Rem nostrum vitae, rerum laudantium impedit ex dolor labore consequatur nihil placeat quia explicabo eum commodi, eius minus. Recusandae sint autem, quod ex aliquam, reiciendis accusamus deserunt veniam iure nulla minus suscipit rem vero tenetur tempore eveniet nesciunt harum.
-        </p>
-      </div>
-    </article>
-
-    <article class="post">
-      <img src="https://placehold.co/400x800" alt="Placeholder" class="post-image">
-      <div class="post-content">
-        <h3>Lorem ipsum dolor sit amet</h3>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ipsa non eum quod odit, error ullam, laudantium dolorem animi soluta alias accusamus vitae. Tempore fugit ex nihil iure? Delectus hic dolore alias sit, fuga molestias nam cumque voluptatum ducimus quas consectetur repellendus molestiae officia rem modi voluptatem dolores sequi dolor laboriosam minus? Aperiam atque placeat cupiditate in eos tenetur amet odio! Rem nostrum vitae, rerum laudantium impedit ex dolor labore consequatur nihil placeat quia explicabo eum commodi, eius minus. Recusandae sint autem, quod ex aliquam, reiciendis accusamus deserunt veniam iure nulla minus suscipit rem vero tenetur tempore eveniet nesciunt harum.
-        </p>
-      </div>
-    </article>
-
-    <article class="post">
-      <img src="https://placehold.co/600x400" alt="Placeholder" class="post-image">
-      <div class="post-content">
-        <h3>Lorem ipsum dolor sit amet</h3>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ipsa non eum quod odit, error ullam, laudantium dolorem animi soluta alias accusamus vitae. Tempore fugit ex nihil iure? Delectus hic dolore alias sit, fuga molestias nam cumque voluptatum ducimus quas consectetur repellendus molestiae officia rem modi voluptatem dolores sequi dolor laboriosam minus? Aperiam atque placeat cupiditate in eos tenetur amet odio! Rem nostrum vitae, rerum laudantium impedit ex dolor labore consequatur nihil placeat quia explicabo eum commodi, eius minus. Recusandae sint autem, quod ex aliquam, reiciendis accusamus deserunt veniam iure nulla minus suscipit rem vero tenetur tempore eveniet nesciunt harum.
-        </p>
-      </div>
-    </article>
-
-    
-  </div>
-  </section>
 
   <!--Contact section-->
   <div id="contact" class="section">
@@ -278,10 +182,7 @@ new faveicon - should be fixed, need to test
         <a href="https://www.linkedin.com/in/nat-krah/" class="dark" target="_blank"><img src="img/dark-linkedin.png" alt="LinkedIn" class="contactIMG" width="50"></a>
         <a href="mailto:nicholaskrah1@gmail.com" class="dark" target="_blank"><img src="img/dark-mail.png" alt="Mail" class="contactIMG" width="50"></a>
 
-        <!--Light copies-->
-        <a href="https://github.com/nat-krah" class="light" target="_blank"><img src="img/light-github.png" alt="Github" class="contactIMG" width="50"></a>
-        <a href="https://www.linkedin.com/in/nat-krah/" class="light" target="_blank"><img src="img/light-linkedin.png" alt="LinkedIn" class="contactIMG" width="50"></a>
-        <a href="mailto:nicholaskrah1@gmail.com" class="light" target="_blank"><img src="img/light-mail.png" alt="Mail" class="contactIMG" width="50"></a>
+
       </div>
     </div>
   </div>

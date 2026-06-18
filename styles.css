@@ -4,8 +4,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-/* Base colors with CSS variables for easy theming*/
 :root {
   --primary-color: #007acc;
   --background-color: #f9f9f9;
@@ -13,19 +11,7 @@
   --sub-text-coolor: #121212;
   --section-border-color: #dcdcdc;
   --header-bg: #e0e0e0;
-  --footer-color: #555555;
 }
-
-[data-theme="dark"] {
-  --primary-color: #007acc;
-  --background-color: #121212;
-  --text-color: #ffffff;
-  --sub-text-coolor: #cccccc;
-  --section-border-color: #2a2a2a;
-  --header-bg: #1a1a1a;
-  --footer-color: #888888;
-}
-
 
 /********************************************************************************\
 *                                                                                *
@@ -74,13 +60,16 @@ a{
   white-space: nowrap;
 }
 
+.center{
+  text-align: center;
+}
+
 /********************************************************************************\
 *                                                                                *
 *                               Header section                                   *
 *                                                                                *
 \********************************************************************************/
 
-/* Header section */
 .container {
   width: 90%;
   max-width: 1000px;
@@ -138,10 +127,6 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
   width: 100%;
-}
-
-#toggleFun {
-  cursor: pointer;
 }
 
 /********************************************************************************\
@@ -329,19 +314,6 @@ nav ul li a:hover::after {
 *                                                                                *
 \********************************************************************************/
 
-/*
-Essentally whats going on is that the image size is not being prioritized
-and so when the photo shrinks, the image gets compressed
-Which makes it look real funny
-I need to have it prioritize the image and have the text get like wraped around it
-I think instead of having them as two seperate things the text and the image should
-become one thing
-These changes should not mess w/ how this looks on a smaller screen
-Cause I like how that looks
-*/
-
-
-
 .item {
   display: flex;
   flex-wrap: nowrap;
@@ -355,7 +327,7 @@ Cause I like how that looks
 
   position: relative;
 
-  border: none; /*Reset boarder*/
+  border: none; /*Reset border*/
   border-radius: 0;
   border-bottom: 1px solid var(--primary-color);  
 }
@@ -420,7 +392,6 @@ a.dark:hover {
   filter: brightness(5);
 }
 
-/*Hidden right now because I don't think I need it and it kinda clutters stuff up*/
 footer {
   background-color: var(--header-bg);
   text-align: center;
@@ -438,7 +409,7 @@ footer {
 \********************************************************************************/
 
 #imageOverlay {
-  display: none; /* hidden by default */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -460,230 +431,6 @@ footer {
 }
 
 
-
-/********************************************************************************\
-*                                                                                *
-*                                 Fun! Popups                                    *
-*                                                                                *
-\********************************************************************************/
-
-#snake-link {
-  position: fixed;
-  bottom: 1.5rem;
-  right: -50px; /* start off screen */
-  font-size: 1.5rem;
-  animation: snakeWalk 12s linear infinite;
-  width: 4rem;
-  height:0px;
-  z-index: 100;
-}
-
-#snake-hint{
-  position: fixed;
-  right: -75px;
-  bottom: 2rem;
-  font-size: medium;
-  animation: snakeHint 12s linear infinite;
-}
-
-@keyframes snakeWalk {
-  0% { right: -50px; transform: scaleX(1); }
-  49% { right: calc(100% + 50px); transform: scaleX(1); }
-  50% { right: calc(100% + 50px); transform: scaleX(-1); } /* flip direction */
-  99% { right: -50px; transform: scaleX(-1); }
-  100% { right: -50px; transform: scaleX(1); }
-}
-
-
-/********************************************************************************\
-*                                                                                *
-*                               Color Selector                                   *
-*                                                                                *
-\********************************************************************************/
-
-.color-wrapper {
-  position: sticky;
-  display: flex;
-  justify-content: flex-end;
-  top: 10px;
-  height: 0px;
-  z-index: 100;
-}
-
-#colorBtn {
-  background: none;
-  border: none;
-  color: var(--primary-color);
-  cursor: pointer;
-  color: rgba(255, 255, 255, 0);
-}
-
-#colorBtn:hover,
-#colorBtn:focus {
-  outline: none;
-}
-
-#color-selector-img{
-  position: sticky;
-  top: 10px;
-  width: 50px;
-  margin: 1rem;
-  z-index: -1;
-}
-
-#colorBtn img {
-  animation: dropIn 1s ease-out;
-}
-
-@keyframes dropIn {
-  0% { transform: translateY(-100px); opacity: 0; }
-  60% { transform: translateY(15px); opacity: 1; }
-  80% { transform: translateY(-5px); }
-  100% { transform: translateY(0); }
-}
-
-.color-dropdown {
-  position: absolute;
-  right: 0;
-  top: 3.5rem;
-  background: var(--header-bg);
-  border: 1px solid var(--primary-color);
-  border-radius: 6px;
-  padding: 15px;
-  width: 220px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.7);
-  z-index: 1000;
-  font-size: 0.9rem;
-  color: var(--sub-text-coolor);
-
-  opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.color-dropdown[hidden] {
-  display: block;
-  opacity: 0;
-  pointer-events: none;
-}
-#colorBtn[aria-expanded="true"] + .color-dropdown {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/*Preset colors*/
-.color-section {
-  margin-bottom: 15px;
-}
-
-.preset-colors {
-  display: flex;
-  gap: 10px;
-}
-
-.color-preset {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: border-color 0.3s;
-}
-
-.color-preset:hover,
-.color-preset:focus {
-  filter: brightness(75%);
-  outline: none;
-}
-
-/*Input colors*/
-input[type="color"] {
-  width: 100%;
-  height: 30px;
-  border: none;
-  cursor: pointer;
-  background: none;
-  padding: 0;
-}
-
-/*Toggle light and dark mode*/
-.toggle-section {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  
-  gap: 15px;
-}
-
-/* Code for toggle switch*/
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 2.5rem;
-  height: 1.5rem;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: calc(1.5rem - 4px);
-  width: calc(1.5rem - 4px);
-  left: 4px;
-  bottom: 2px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: var(--primary-color);
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px var(--primary-color);
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(calc(1.25rem - 8px));
-  -ms-transform: translateX(calc(1.25rem - 8px));
-  transform: translateX(calc(1.25rem - 8px));
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: calc(1.5rem + 4px);
-}
-
-.slider.round:before {
-  border-radius: 50%;
-} 
-
-/********************************************************************************\
-*                                                                                *
-*                               Different pages                                  *
-*                                                                                *
-\********************************************************************************/
-
 /*Home button*/
 .homeBtn{
   color: var(--text-color);
@@ -699,30 +446,6 @@ input:checked + .slider:before {
   display: block;
   text-align: center;
 }
-
-
-/*snake.html*/
-.snake-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    margin: 0 auto;
-    height: 100vh;
-}
-
-#snake-game{
-  border: 3px solid var(--primary-color);
-  max-width: calc(100vw - 4px);
-}
-
-#snake-home{
-  margin:20px;
-}
-
-
-
 
 
 @media (max-width: 768px) {

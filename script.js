@@ -1,142 +1,5 @@
 //Wait until DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    let path = window.location.pathname;
-    
-    //Change faveicon based on perfered color mode
-    const faveicon = document.getElementById('faveicon');
-    if (window.matchMedia) {
-        // Check if the dark-mode Media-Query matches
-        if(window.matchMedia('(prefers-color-scheme: dark)').matches){
-            faveicon.setAttribute('href','../img/dark-faveicon.png');
-        } else {
-            faveicon.setAttribute('href','../img/light-faveicon.png');
-        }
-    }
-
-
-    // =============================
-    // Fun Mode Toggle
-    // =============================
-    const toggleFunBtn = document.getElementById('toggleFun');
-    const funItems = document.querySelectorAll('.fun-item');
-    const noFun = document.querySelectorAll('.no-fun');
-    const aboutHeader = document.querySelector('#about h2');
-    const aboutText = document.querySelector('#about p');
-
-    let funToggled = true;
-
-    // Default content
-    const defaultAbout = {
-    title: "About",
-    text: "Hi!\nI'm Nat, a second year at RIT studing mechanical, aerospace, and computer engineering. For as long as I can remember I've loved putting things together. From simple legos in Elementery school to speocalizing in designing complex parts for a non-uniform robotic arm. My life has been a series of projects, and this website is an attempt to document there highlights."
-    };
-
-    // Fun content
-    const funAbout = {
-    title: "About-Personal",
-    text: "While projects are a lot of fun and a huge proponent in my life, they are not everything. I made this section to add a little personality to the website and showcase some of the stuff I do outside of strict engineering. Feel free to look around, explore. You might find something cool or unexpected."
-    };
-
-    //Hide fun items and show noFun items by default
-    funItems.forEach(item => item.style.display = 'none');
-    noFun.forEach(item => item.style.display = 'flex');
-
-    toggleFunBtn.addEventListener('click', function(e) {
-        if (funToggled) {
-            funItems.forEach(item => item.style.display = 'flex');
-            noFun.forEach(item => item.style.display = 'none');
-
-            //Only change the about section if we are in index.html
-            if (path === "/index.html"){
-                scrambleText(aboutHeader, funAbout.title);
-                scrambleText(aboutText, funAbout.text);
-            }
-
-            funToggled = false;
-        } else {
-            funItems.forEach(item => item.style.display = 'none');
-            noFun.forEach(item => item.style.display = 'flex');
-            
-            //Only change the about section if we are in index.html
-            if (path === "/index.html"){
-                scrambleText(aboutHeader, defaultAbout.title);
-                scrambleText(aboutText, defaultAbout.text);
-            }
-
-            funToggled = true;
-        }
-    });
-    
-    // =============================
-    // Dropdown + color code
-    // =============================
-    const colorBtn = document.getElementById('colorBtn');
-    const colorWheel = document.getElementById('color-selector-img')
-    const colorDropdown = document.getElementById('colorDropdown');
-    const lightModeToggle = document.getElementById('lightModeToggle');
-    const presetColors = document.querySelectorAll('.color-preset');
-    const customColorPicker = document.getElementById('customColorPicker');
-    const lightElems = document.querySelectorAll('.dark');
-    const darkElems = document.querySelectorAll('.light');
-
-    const savedMode = localStorage.getItem('mode');
-    const savedColor = localStorage.getItem('primaryColor');
-    applyColor(savedMode, savedColor); //Apply color on page laod
-
-    // Toggle dropdown
-    colorBtn.addEventListener('click', () => {
-        const expanded = colorBtn.getAttribute('aria-expanded') === 'true';
-        colorBtn.setAttribute('aria-expanded', String(!expanded));
-        colorDropdown.hidden = !colorDropdown.hidden;
-    });
-    
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!colorDropdown.contains(e.target) && e.target !== colorBtn && e.target !== colorWheel) {
-            colorDropdown.hidden = true;
-            colorBtn.setAttribute('aria-expanded', 'false');
-        }
-    });
-    
-    //Toggle light mode
-    lightModeToggle.addEventListener('change',()=>{
-        const mode = lightModeToggle.checked ? 'dark' : 'light';
-        localStorage.setItem('mode', mode);
-        applyColor(mode, localStorage.getItem('primaryColor') || '#007acc');
-    });
-
-    // Preset colors
-    presetColors.forEach(btn => {
-        btn.addEventListener('click', () => {
-        const color = btn.getAttribute('data-color');
-        localStorage.setItem('primaryColor', color);
-        applyColor(localStorage.getItem('mode') || 'dark', color);
-        });
-    });
-
-    // Custom color
-    customColorPicker.addEventListener('input', () => {
-        const color = customColorPicker.value;
-        localStorage.setItem('primaryColor', color);
-        applyColor(localStorage.getItem('mode') || 'dark', color);
-    });
-
-    function applyColor(mode, color) {
-        document.documentElement.setAttribute('data-theme', mode);
-        document.documentElement.style.setProperty('--primary-color', color);
-        lightModeToggle.checked = (mode === 'dark');
-        customColorPicker.value = color;
-        
-        // Show/hide light/dark elems
-        if (mode === 'light') {
-            lightElems.forEach(el => el.style.display = 'block');
-            darkElems.forEach(el => el.style.display = 'none');
-        } else {
-            darkElems.forEach(el => el.style.display = 'block');
-            lightElems.forEach(el => el.style.display = 'none');
-        }
-    }
-
     // =============================
     // Functions
     // =============================
@@ -176,16 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
         {
         id: 'cubesat',
         images: [
-            '../img/projects/cubesat/spex-hab-space.png',
-            '../img/projects/cubesat/spex-hab-ground.jpg',
             '../img/projects/cubesat/cubesat-at-imagine.jpg',
             '../img/projects/cubesat/geiger-scintillating.JPG'
         ],
         captions: [
-            "Image from SPEX High Altitude Balloon",
-            "Launching High Altitude Balloon",
             "Cubesat at Imagine RIT",
-            "Custom scintillating and geiger counter run from an Arduino"
+            "Custom scintillating and geiger counter run from Arduino"
         ]
         },
         {
@@ -205,12 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
         id: 'website',
         images: [
             '../img/projects/website-images/homepage.png',
-            '../img/projects/website-images/snake.png',
             '../img/projects/website-images/code.png'
         ],
         captions: [
             "Homepage Screenshot",
-            "Snake game I coded in JavaScript",
             "Website code"
         ]
         },
@@ -219,15 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
         images: [
             '../img/projects/vex-over-under/red-leds.jpg',
             '../img/projects/vex-over-under/v2-blue-leds.jpg',
-            '../img/projects/vex-over-under/.jpg',
-            '../img/projects/vex-over-under/.jpg'
 
         ],
         captions: [
             "Showcasing v1 with red LEDs",
             "v2 about to start the autonomous period",
-            "Cad model of v2",
-            "Cad model of v1"
         ]
         },
         {
@@ -348,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const img = project.querySelector('.slideshow');
-        const caption = project.querySelector('.caption'); // <- NEED a .caption element in HTML
+        const caption = project.querySelector('.caption');
 
         let index = 0;
         imageIndexes[slideshow.id] = 0;
